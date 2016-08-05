@@ -1,0 +1,173 @@
+/** Duplicates the look of Mocha's TTY output in Atom's test-runner window. */
+
+
+html, body{
+	background: #000;
+}
+
+
+/** TTY emulator overlaying workspace beneath it */
+#mocha{
+	all: unset;
+	position: fixed;
+	top:    0;
+	left:   0;
+	right:  0;
+	bottom: 0;
+	z-index: 9;
+	
+	background: rgba(0,0,0,.9);
+	color: #fff;
+	font: 10pt Menloco, Menlo, Monaco, monospace;
+	padding: 1ch;
+	padding-bottom: 70px;
+	transition:
+		.0s step-start z-index,
+		.2s ease transform,
+		.2s ease opacity;
+	transform: translate3d(0,0,0);
+}
+	/** Hide TTY overlay to expose workspace elements below */
+	#mocha.hide{
+		display: block !important;
+		pointer-events: none;
+		transform: translate3d(25%,0,0);
+		transition-delay: .25s, 0s, 0s;
+		opacity:  0;
+		z-index: -9;
+	}
+
+code{
+	all: unset;
+}
+	/** Luminous syntax highlighting */
+	code .js{  color: #090; }
+	.js-punct{ color: #050; }
+	.js-quote{ color: #0a0; }
+	.js-key{   color: #0d0; }
+	.js-value{ color: #0e0; }
+	.js-ident{ color: #0b0; }
+
+pre{
+	all: unset;
+	white-space: pre;
+	font-family: monospace;
+	display: block;
+	margin: 1em 0;
+}
+
+ul, li{
+	list-style: none;
+	padding: 0;
+	margin:  0;
+}
+
+a, a:link, a:visited{
+	color: inherit;
+	text-decoration: none;
+}
+
+h1, h2{
+	margin: 0;
+	all: inherit;
+	display: inline;
+}
+
+
+
+/** Test results */
+.suite > ul{
+	margin-left: 4ch;
+	margin-top: .4em;
+}
+	.test,
+	#mocha-stats > li{
+		position: relative;
+		display: block;
+		color: #828282;
+	}
+	
+	.test{
+		margin: .3em 0;
+	}
+		.test.pass::before{
+			content: "It ";
+		}
+		
+		/** Icon */
+		.test::after{
+			position: absolute;
+			top: 0;
+			font-size: 1.5em;
+			line-height: .8;
+			right: 100%;
+			width: 1em;
+			text-align: center;
+			margin-right: .25ch;
+		}
+			.test.pass::after{ content: "✓"; color: #3bbb33; }
+			.test.fail::after{ content: "✘"; color: #c13928; }
+
+		/** Duration */
+		.test .duration{
+			display: inline-block;
+			padding-left: 1ch;
+		}
+			.test .duration::before{ content: "(" }
+			.test .duration::after{  content: ")" }
+
+		.test .replay{
+			display: none;
+		}
+
+		/** Raw output */
+		.test > pre{
+			margin: .5em 0 1em 0;
+			border-left: 1px double;
+			padding-left: 1em;
+			word-wrap: break-word;
+		}
+
+
+		.suite .suite{
+			margin-top: 1em;
+		}
+		
+/** Stats anchored to bottom */
+#mocha-stats{
+	position: fixed;
+	padding: .5em;
+	bottom:  0;
+	left:    0;
+	z-index: 5;
+}
+	/** Hide progress <canvas> */
+	#mocha-stats > .progress{
+		display: none;
+	}
+
+	#mocha-stats > .progress ~ li{
+		display: block;
+		height: 1.4em;
+		line-height: 1.4;
+	}
+	
+	/** Fit the "Passes" label to fit the next two rows */
+	#mocha-stats .passes > a:first-child{
+		min-width: 72px;
+		display: inline-block;
+	}
+	
+	#mocha-stats em{
+		font-style: normal;
+	}
+
+
+/** NOTE: We can't access theme variables, so just use predetermined colours instead */
+.theme-atom-dark-ui      .theme-colour-check{ background: #303030 }
+.theme-atom-light-ui     .theme-colour-check{ background: #eee    }
+.theme-atom-material-ui  .theme-colour-check{ background: #fff    }
+.theme-flatland-dark-ui  .theme-colour-check{ background: #1d1f21 }
+.theme-one-dark-ui       .theme-colour-check{ background: #2b2b2b }
+.theme-one-light-ui      .theme-colour-check{ background: #ebebeb }
+.theme-seti-ui           .theme-colour-check{ background: #15191b }
