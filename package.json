@@ -5,6 +5,7 @@
 	"repository": "https://github.com/Alhadis/Atom-Mocha",
 	"license": "ISC",
 	"bin": "./bin/atom-mocha",
+	"atomTestRunner": "./bin/atom-mocha",
 	"engines": {
 		"atom": ">1.6.0"
 	},
