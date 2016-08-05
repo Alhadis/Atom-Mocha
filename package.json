@@ -4,6 +4,7 @@
 	"description": "Run Atom specs using bleeding-edge Mocha and Chai.",
 	"repository": "https://github.com/Alhadis/Atom-Mocha",
 	"license": "ISC",
+	"bin": "./bin/atom-mocha",
 	"engines": {
 		"atom": ">1.6.0"
 	},

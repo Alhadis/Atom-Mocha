@@ -1,3 +1,4 @@
+#!/usr/local/bin/node --es_staging
 "use strict";
 
 /** Bring on a real test-runner */
@@ -25,5 +26,5 @@ Chai.Assertion.addMethod("class", function(classNames){
 });
 
 
-/** Connect with Atom */
-module.exports = require("./lib/main.js");
+/** Connect Atom to our test runner */
+module.exports = require("../lib/main.js");
