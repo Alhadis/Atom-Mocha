@@ -1,5 +1,6 @@
 #!/usr/local/bin/node --es_staging
 "use strict";
 
-/** Connect Atom to our test runner */
-module.exports = require("../lib/main.js");
+const AtomMocha = require("../lib/main.js");
+module.exports  = args => 
+	new AtomMocha(args).run(args);
