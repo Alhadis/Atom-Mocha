@@ -1,5 +1,7 @@
 "use strict";
 
+require("chai").should();
+
 
 describe("This package", function(){
 	
