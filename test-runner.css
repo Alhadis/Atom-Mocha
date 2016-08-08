@@ -3,6 +3,7 @@
 
 html, body{
 	background: #000;
+	tab-size: 4;
 }
 
 
@@ -105,8 +106,8 @@ h1, h2{
 			text-align: center;
 			margin-right: .25ch;
 		}
-			.test.pass::after{ content: "✓"; color: #3bbb33; }
-			.test.fail::after{ content: "✘"; color: #c13928; }
+			.test.pass::after{ content: "\2713"; color: #3bbb33; }
+			.test.fail::after{ content: "\2718"; color: #c13928; }
 
 		/** Duration */
 		.test .duration{
