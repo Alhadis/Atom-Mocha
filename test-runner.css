@@ -78,6 +78,21 @@ html, body{
 	}
 
 
+
+/** Duration */
+#mocha .duration{
+	display: inline-block;
+	cursor: text;
+}
+	#mocha .duration::before,
+	#mocha .duration::after{
+		color: #444;
+		pointer-events: none;
+	}
+		#mocha .duration::before{ content: "(" }
+		#mocha .duration::after{  content: ")" }
+
+
 /** Test results */
 #mocha .results{
 	margin-left: 4ch;
@@ -103,20 +118,9 @@ html, body{
 			#mocha .test.pass::after{ content: "\2713"; color: #3bbb33; }
 			#mocha .test.fail::after{ content: "\2718"; color: #c13928; }
 
-		/** Duration */
 		#mocha .test .duration{
-			display: inline-block;
 			padding-left: 1ch;
-			color: #5a5a5a;
-			cursor: text;
 		}
-			#mocha .test .duration::before,
-			#mocha .test .duration::after{
-				color: #444;
-				pointer-events: none;
-			}
-				#mocha .test .duration::before{ content: "(" }
-				#mocha .test .duration::after{  content: ")" }
 
 		/** Raw output */
 		#mocha .test > pre{
@@ -139,25 +143,40 @@ html, body{
 	left:    0;
 	z-index: 5;
 	margin:  0;
-	color: #bbb;
+	width:   100%;
+	color:   #bbb;
+	white-space: nowrap;
+	overflow: hidden;
 }
-	#mocha-stats > dt{
-		display: inline;
+	#mocha-stats > div{
+		display: inline-block;
+		vertical-align: top;
 	}
-		#mocha-stats > dt::after{
-			content: ": ";
-			color: #999;
-		}
+	/** Hide empty values */
+	#mocha-stats > .zero{
+		display: none;
+	}
 	
-	#mocha-stats > dd,
-	#mocha-stats .amount{
-		display: inline;
-		color: #fff;
+	#mocha-passes{   color: #3bbb33 }
+	#mocha-pending{  color: #2eaebb }
+	#mocha-failures{ color: #c13928 }
+	
+	/** Total duration */
+	#mocha-duration{
+		color: #828282;
+		margin: 0 -.2em 0 .55em;
 	}
-		#mocha-stats > dd::after{
-			content: " | ";
-			color: #555;
-		}
+	
+	/** Dividers */
+	#mocha-pending,
+	#mocha-failures{
+		border-left: 1px solid #444;
+		padding-left: 1em;
+		margin-left:  1em;
+	}
+	
+	
+	
 
 
 /** NOTE: We can't access theme variables, so just use predetermined colours instead */
