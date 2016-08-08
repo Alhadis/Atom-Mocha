@@ -26,3 +26,11 @@ describe("This package", function(){
 		});
 	});
 });
+
+
+describe("Second suite at top-level", function(){
+	
+	it("shows another block", function(){
+		expect(Date).to.be.a(Function);
+	});
+});

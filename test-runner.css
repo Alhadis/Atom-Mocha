@@ -38,37 +38,37 @@ html, body{
 		z-index: -9;
 	}
 
-code{
+#mocha code{
 	all: unset;
 }
 	/** Luminous syntax highlighting */
-	code .js{  color: #090; }
-	.js-punct{ color: #050; }
-	.js-quote{ color: #0a0; }
-	.js-key{   color: #0d0; }
-	.js-value{ color: #0e0; }
-	.js-ident{ color: #0b0; }
+	#mocha .js{       color: #090; }
+	#mocha .js-punct{ color: #050; }
+	#mocha .js-quote{ color: #0a0; }
+	#mocha .js-key{   color: #0d0; }
+	#mocha .js-value{ color: #0e0; }
+	#mocha .js-ident{ color: #0b0; }
 
-pre{
+#mocha pre{
 	all: unset;
 	white-space: pre;
 	font-family: monospace;
 	display: block;
 	margin: 1em 0;
 }
+	#mocha pre[hidden]{
+		display: none !important;
+	}
 
-ul, li{
-	list-style: none;
-	padding: 0;
-	margin:  0;
-}
-
-a, a:link, a:visited{
+#mocha a,
+#mocha a:link,
+#mocha a:visited{
 	color: inherit;
 	text-decoration: none;
 }
 
-h1, h2{
+#mocha h1,
+#mocha h2{
 	margin: 0;
 	all: inherit;
 	display: inline;
@@ -77,26 +77,26 @@ h1, h2{
 
 
 /** Test results */
-.suite > ul{
+#mocha .results{
 	margin-left: 4ch;
 	margin-top: .4em;
 }
-	.test,
+	#mocha .test,
 	#mocha-stats > li{
 		position: relative;
 		display: block;
 		color: #828282;
 	}
 	
-	.test{
+	#mocha .test{
 		margin: .3em 0;
 	}
-		.test.pass::before{
+		#mocha .test.pass::before{
 			content: "It ";
 		}
 		
 		/** Icon */
-		.test::after{
+		#mocha .test::after{
 			position: absolute;
 			top: 0;
 			font-size: 1.5em;
@@ -106,23 +106,19 @@ h1, h2{
 			text-align: center;
 			margin-right: .25ch;
 		}
-			.test.pass::after{ content: "\2713"; color: #3bbb33; }
-			.test.fail::after{ content: "\2718"; color: #c13928; }
+			#mocha .test.pass::after{ content: "\2713"; color: #3bbb33; }
+			#mocha .test.fail::after{ content: "\2718"; color: #c13928; }
 
 		/** Duration */
-		.test .duration{
+		#mocha .duration{
 			display: inline-block;
 			padding-left: 1ch;
 		}
-			.test .duration::before{ content: "(" }
-			.test .duration::after{  content: ")" }
-
-		.test .replay{
-			display: none;
-		}
+			#mocha .duration::before{ content: "(" }
+			#mocha .duration::after{  content: ")" }
 
 		/** Raw output */
-		.test > pre{
+		#mocha .test > pre{
 			margin: .5em 0 1em 0;
 			border-left: 1px double;
 			padding-left: 1em;
@@ -130,7 +126,7 @@ h1, h2{
 		}
 
 
-		.suite .suite{
+		#mocha .suite .suite{
 			margin-top: 1em;
 		}
 		
