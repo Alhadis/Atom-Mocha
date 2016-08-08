@@ -109,31 +109,43 @@ html, body{
 			display: block;
 			color: #828282;
 		}
-			/** Icon */
-			#mocha .test::after{
-				position: absolute;
-				top: 0;
-				font-size: 1.5em;
-				line-height: .8;
-				right: 100%;
-				width: 1em;
-				text-align: center;
-				margin-right: .25ch;
+			/** Test description */
+			#mocha .test-title{
+				cursor: pointer;
 			}
-				#mocha .test.pass::after{ content: "\2713"; color: #3bbb33; }
-				#mocha .test.fail::after{ content: "\2718"; color: #c13928; }
+				/** Icon */
+				#mocha .test-title::after{
+					position: absolute;
+					top: 0;
+					font-size: 1.5em;
+					line-height: .8;
+					right: 100%;
+					width: 1em;
+					text-align: center;
+					margin-right: .25ch;
+				}
+					#mocha .pass > .test-title::after{ content: "\2713"; color: #3bbb33; }
+					#mocha .fail > .test-title::after{ content: "\2718"; color: #c13928; }
+				
+				/** Elapsed time */
+				#mocha .test-title > .duration{
+					padding-left: 1ch;
+				}
+				
+				/** Hover state */
+				#mocha .test-title:hover > h2{           color: #fff }
+				#mocha .test-title:hover > .duration{    color: #eee }
+				#mocha .pass > .test-title:hover::after{ color: #0f0 }
+				#mocha .fail > .test-title:hover::after{ color: #f00 }
 
-			#mocha .test .duration{
-				padding-left: 1ch;
-			}
-
-			/** Preformatted text */
+			/** Code block */
 			#mocha .test > pre{
 				margin: .5em 0 1em 0;
 				border-left: 1px double;
 				padding-left: 1em;
 				word-wrap: break-word;
 			}
+	
 	
 	#mocha .suite .suite{
 		margin-top: 1em;
