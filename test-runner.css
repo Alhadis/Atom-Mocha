@@ -71,9 +71,6 @@ html, body{
 	display: inline;
 	margin: 0;
 }
-	#mocha h1{
-		color: #fff;
-	}
 
 
 
@@ -100,8 +97,37 @@ html, body{
 	overflow: auto;
 	margin: 1ch;
 }
+#mocha .suite{
+	margin-bottom: 1.25em;
+}
+	/** Suite title */
+	#mocha .suite-title{
+		cursor: pointer;
+		display: block;
+		color: #fff;
+	}
+		/** Disclosure indicators */
+		#mocha .suite-title::after{
+			content: "\f0a2";
+			display: inline-block;
+			vertical-align: middle;
+			visibility: hidden;
+			font: 1.25em/1.2 "Octicons Regular";
+			-webkit-font-smoothing: antialiased;
+			margin-left: .5em;
+		}
+			#mocha .collapsed .suite-title::after{
+				content: "\f0a3";
+			}
+			#mocha .suite-title:hover::after{
+				visibility: visible;
+			}
+	
+	
+	/** List of tests */
 	#mocha .results{
-		margin: .4em 0 1.25em 4ch;
+		margin-left: 4ch;
+		margin-top: .4em;
 	}
 		#mocha .test{
 			margin: .3em 0;
