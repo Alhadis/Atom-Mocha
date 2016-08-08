@@ -69,11 +69,13 @@ html, body{
 
 #mocha h1,
 #mocha h2{
-	margin: 0;
 	all: inherit;
 	display: inline;
+	margin: 0;
 }
-
+	#mocha h1{
+		color: #fff;
+	}
 
 
 /** Test results */
@@ -81,15 +83,11 @@ html, body{
 	margin-left: 4ch;
 	margin-top: .4em;
 }
-	#mocha .test,
-	#mocha-stats > li{
+	#mocha .test{
+		margin: .3em 0;
 		position: relative;
 		display: block;
 		color: #828282;
-	}
-	
-	#mocha .test{
-		margin: .3em 0;
 	}
 		/** Icon */
 		#mocha .test::after{
@@ -106,13 +104,19 @@ html, body{
 			#mocha .test.fail::after{ content: "\2718"; color: #c13928; }
 
 		/** Duration */
-		#mocha .duration{
+		#mocha .test .duration{
 			display: inline-block;
 			padding-left: 1ch;
 			color: #5a5a5a;
+			cursor: text;
 		}
-			#mocha .duration::before{ content: "("; color: #444; }
-			#mocha .duration::after{  content: ")"; color: #444; }
+			#mocha .test .duration::before,
+			#mocha .test .duration::after{
+				color: #444;
+				pointer-events: none;
+			}
+				#mocha .test .duration::before{ content: "(" }
+				#mocha .test .duration::after{  content: ")" }
 
 		/** Raw output */
 		#mocha .test > pre{
@@ -130,31 +134,30 @@ html, body{
 /** Stats anchored to bottom */
 #mocha-stats{
 	position: fixed;
-	padding: .5em;
+	padding: .9em;
 	bottom:  0;
 	left:    0;
 	z-index: 5;
+	margin:  0;
+	color: #bbb;
 }
-	/** Hide progress <canvas> */
-	#mocha-stats > .progress{
-		display: none;
+	#mocha-stats > dt{
+		display: inline;
 	}
-
-	#mocha-stats > .progress ~ li{
-		display: block;
-		height: 1.4em;
-		line-height: 1.4;
-	}
+		#mocha-stats > dt::after{
+			content: ": ";
+			color: #999;
+		}
 	
-	/** Fit the "Passes" label to fit the next two rows */
-	#mocha-stats .passes > a:first-child{
-		min-width: 72px;
-		display: inline-block;
+	#mocha-stats > dd,
+	#mocha-stats .amount{
+		display: inline;
+		color: #fff;
 	}
-	
-	#mocha-stats em{
-		font-style: normal;
-	}
+		#mocha-stats > dd::after{
+			content: " | ";
+			color: #555;
+		}
 
 
 /** NOTE: We can't access theme variables, so just use predetermined colours instead */
