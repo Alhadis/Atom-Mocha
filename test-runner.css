@@ -91,10 +91,6 @@ html, body{
 	#mocha .test{
 		margin: .3em 0;
 	}
-		#mocha .test.pass::before{
-			content: "It ";
-		}
-		
 		/** Icon */
 		#mocha .test::after{
 			position: absolute;
