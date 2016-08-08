@@ -17,6 +17,8 @@ describe("This package", function(){
 		NaN.should.equal(NaN); // NaH
 	});
 	
+	it("might be written later"); // Nah
+	
 	describe("Suite nesting", function(){
 		
 		it("does something useful eventually", function(done){

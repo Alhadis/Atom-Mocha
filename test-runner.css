@@ -164,6 +164,15 @@ html, body{
 				#mocha .pass > .test-title:hover::after{ color: #0f0 }
 				#mocha .fail > .test-title:hover::after{ color: #f00 }
 
+				/** Pending tests */
+				#mocha .pending > .test-title,
+				#mocha .pending > .test-title:hover > h2,
+				#mocha .pending > .test-title::after{
+					content: "-";
+					cursor: default;
+					color: #2eaebb;
+				}
+				
 			/** Code block */
 			#mocha .test > pre{
 				margin: .5em 0 1em 0;
