@@ -109,9 +109,10 @@ html, body{
 		#mocha .duration{
 			display: inline-block;
 			padding-left: 1ch;
+			color: #5a5a5a;
 		}
-			#mocha .duration::before{ content: "(" }
-			#mocha .duration::after{  content: ")" }
+			#mocha .duration::before{ content: "("; color: #444; }
+			#mocha .duration::after{  content: ")"; color: #444; }
 
 		/** Raw output */
 		#mocha .test > pre{
