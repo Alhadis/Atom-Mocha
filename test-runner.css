@@ -20,8 +20,6 @@ html, body{
 	background: rgba(0,0,0,.9);
 	color: #fff;
 	font: 10pt Menloco, Menlo, Monaco, monospace;
-	padding: 1ch;
-	padding-bottom: 70px;
 	transition:
 		.0s step-start z-index,
 		.2s ease transform,
@@ -82,7 +80,6 @@ html, body{
 /** Duration */
 #mocha .duration{
 	display: inline-block;
-	cursor: text;
 }
 	#mocha .duration::before,
 	#mocha .duration::after{
@@ -94,50 +91,57 @@ html, body{
 
 
 /** Test results */
-#mocha .results{
-	margin-left: 4ch;
-	margin-top: .4em;
+#mocha-report{
+	position: absolute;
+	top:    0;
+	left:   0;
+	right:  0;
+	bottom: 2em;
+	overflow: auto;
+	margin: 1ch;
 }
-	#mocha .test{
-		margin: .3em 0;
-		position: relative;
-		display: block;
-		color: #828282;
+	#mocha .results{
+		margin: .4em 0 1.25em 4ch;
 	}
-		/** Icon */
-		#mocha .test::after{
-			position: absolute;
-			top: 0;
-			font-size: 1.5em;
-			line-height: .8;
-			right: 100%;
-			width: 1em;
-			text-align: center;
-			margin-right: .25ch;
+		#mocha .test{
+			margin: .3em 0;
+			position: relative;
+			display: block;
+			color: #828282;
 		}
-			#mocha .test.pass::after{ content: "\2713"; color: #3bbb33; }
-			#mocha .test.fail::after{ content: "\2718"; color: #c13928; }
+			/** Icon */
+			#mocha .test::after{
+				position: absolute;
+				top: 0;
+				font-size: 1.5em;
+				line-height: .8;
+				right: 100%;
+				width: 1em;
+				text-align: center;
+				margin-right: .25ch;
+			}
+				#mocha .test.pass::after{ content: "\2713"; color: #3bbb33; }
+				#mocha .test.fail::after{ content: "\2718"; color: #c13928; }
 
-		#mocha .test .duration{
-			padding-left: 1ch;
-		}
+			#mocha .test .duration{
+				padding-left: 1ch;
+			}
 
-		/** Raw output */
-		#mocha .test > pre{
-			margin: .5em 0 1em 0;
-			border-left: 1px double;
-			padding-left: 1em;
-			word-wrap: break-word;
-		}
-
-
-		#mocha .suite .suite{
-			margin-top: 1em;
-		}
+			/** Preformatted text */
+			#mocha .test > pre{
+				margin: .5em 0 1em 0;
+				border-left: 1px double;
+				padding-left: 1em;
+				word-wrap: break-word;
+			}
+	
+	#mocha .suite .suite{
+		margin-top: 1em;
+	}
 		
 /** Stats anchored to bottom */
 #mocha-stats{
-	position: fixed;
+	position: absolute;
 	padding: .9em;
 	bottom:  0;
 	left:    0;
