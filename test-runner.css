@@ -1,6 +1,7 @@
-html{
+html, body{
 	background: #000;
 }
+
 
 /** TTY "emulator" replicating the look of Mocha's spec reporter. Kinda. */
 #mocha{
