@@ -1,16 +1,8 @@
-/** Duplicates the look of Mocha's TTY output in Atom's test-runner window. */
-
-
-html, body{
-	background: #000;
-	tab-size: 4;
-}
-
-
-/** TTY emulator overlaying workspace beneath it */
+/** TTY "emulator" replicating the look of Mocha's spec reporter. Kinda. */
 #mocha{
 	all: unset;
 	position: fixed;
+	tab-size: 4;
 	top:    0;
 	left:   0;
 	right:  0;
