@@ -20,7 +20,7 @@ describe("This package", function(){
 	describe("Suite nesting", function(){
 		
 		it("does something useful eventually", function(done){
-			setTimeout(_ => done(), 3500);
+			setTimeout(_ => done(), 40);
 		});
 		
 		it("still wakes up unemployed", function(){

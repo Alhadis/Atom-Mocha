@@ -160,14 +160,22 @@ html{
 					padding-left: 1ch;
 				}
 				
-				/** Failed Tests */
+				/** Failed/slow tests */
+				#mocha .slow .duration,
 				#mocha .fail > .test-title{           color: #c13928 }
 				#mocha .fail > .test-title:hover{        color: #f00 }
 				#mocha .fail > .test-title::after{  content: "\2718" }
+				#mocha .slow .duration::before,
+				#mocha .slow .duration::after,
 				#mocha .fail > .test-title > .duration::before,
-				#mocha .fail > .test-title > .duration::after{
-					color: #700;
-				}
+				#mocha .fail > .test-title > .duration::after{ color: #700 }
+				#mocha .slow > .test-title:hover > .duration{  color: #f00 }
+				
+				/** Medium-speed tests */
+				#mocha .okay .duration{ color: #9fa01c; }
+				#mocha .okay .duration::before,
+				#mocha .okay .duration::after{ color: #252 }
+				#mocha .okay > .test-title:hover > .duration{  color: #e1e30d }
 
 				/** Pending tests */
 				#mocha .pending > .test-title,
