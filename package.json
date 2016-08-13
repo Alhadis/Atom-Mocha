@@ -8,6 +8,9 @@
 	"atomTestRunner": "./bin/atom-mocha",
 	"atom-mocha": {
 		"autoIt": true,
+		"optFiles": [
+			"mocha.opts"
+		],
 		"tests": [
 			"spec/other-specs"
 		],
