@@ -6,10 +6,17 @@
 	"license": "ISC",
 	"bin": "./bin/atom-mocha",
 	"atomTestRunner": "./bin/atom-mocha",
+	"atom-mocha": {
+		"autoIt": true,
+		"mocha": {
+			"bail": true
+		}
+	},
 	"engines": {
 		"atom": ">1.6.0"
 	},
 	"dependencies": {
+		"get-options": ">=1.1.0",
 		"mocha": "*",
 		"chai": "*"
 	}

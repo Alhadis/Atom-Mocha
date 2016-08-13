@@ -1,1 +1,2 @@
---grep /again/
+--reporter atom
+--require chai/should

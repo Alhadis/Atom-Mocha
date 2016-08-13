@@ -1,7 +1,5 @@
 "use strict";
 
-require("chai").should();
-
 
 describe("This package", function(){
 	
@@ -33,6 +31,6 @@ describe("This package", function(){
 describe("Second suite at top-level", function(){
 	
 	it("shows another block", function(){
-		expect(Date).to.be.a(Function);
+		Chai.expect(Date).to.be.an.instanceOf(Function);
 	});
 });
