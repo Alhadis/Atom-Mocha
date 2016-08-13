@@ -8,7 +8,6 @@
 	"atomTestRunner": "./bin/atom-mocha",
 	"atom-mocha": {
 		"autoIt": true,
-		"tests": "spec/other-specs",
 		"specPattern": "/-(?:test|spec)\\.(?:coffee|js)$/i",
 		"mocha": {
 			"bail": false
