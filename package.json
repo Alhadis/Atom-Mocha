@@ -8,8 +8,11 @@
 	"atomTestRunner": "./bin/atom-mocha",
 	"atom-mocha": {
 		"autoIt": true,
+		"tests": [
+			"spec/other-specs"
+		],
 		"mocha": {
-			"bail": true
+			"bail": false
 		}
 	},
 	"engines": {
