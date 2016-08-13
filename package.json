@@ -7,16 +7,7 @@
 	"bin": "./bin/atom-mocha",
 	"atomTestRunner": "./bin/atom-mocha",
 	"atom-mocha": {
-		"autoIt": true,
-		"css": "spec/assets/test.css",
-		"js": {
-			"header": "spec/assets/header-setup.js",
-			"footer": ["spec/assets/footer-setup.js"]
-		},
-		"specPattern": "/-(?:test|spec)\\.(?:coffee|js)$/i",
-		"mocha": {
-			"bail": false
-		}
+		"autoIt": true
 	},
 	"engines": {
 		"atom": ">1.6.0"
