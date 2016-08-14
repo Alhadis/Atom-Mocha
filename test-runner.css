@@ -194,6 +194,15 @@ html, body{
 				padding-left: 1em;
 				word-wrap: break-word;
 			}
+			
+			/** Error feedback */
+			#mocha .error-block{
+				color: #c13928;
+				margin: .5em 0;
+				padding: 0 1em;
+				border-left: 1px solid #6e2117;
+				white-space: pre;
+			}
 	
 	
 	#mocha .suite .suite{

@@ -33,4 +33,9 @@ describe("Second suite at top-level", function(){
 	it("shows another block", function(){
 		Chai.expect(Date).to.be.an.instanceOf(Function);
 	});
+	
+	
+	it("breaks something", function(){
+		oops();
+	});
 });
