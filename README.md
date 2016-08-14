@@ -12,7 +12,9 @@ Installation
 ------------
 1. Run `npm install atom-mocha --save-dev`
 2. Add this to your `package.json` file:
-```json
-"atomTestRunner": "./bin/atom-mocha"
-```
+
+	```json
+	"atomTestRunner": "./bin/atom-mocha"
+	```
+
 3. Quit and restart Atom to clear its internal cache.
