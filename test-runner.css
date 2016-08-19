@@ -203,6 +203,10 @@ html, body{
 				border-left: 1px solid #6e2117;
 				white-space: pre;
 			}
+				#mocha .stack-callee{        color: #c13928; }
+				#mocha .error-stack{         color: #7f261a; }
+				#mocha .stack-source{        color: #700;    }
+				#mocha .stack-source > span{ color: #c13928; }
 	
 	
 	#mocha .suite .suite{
