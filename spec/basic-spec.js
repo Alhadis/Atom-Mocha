@@ -11,8 +11,26 @@ describe("This package", function(){
 		this.should.be.extensible.and.ok; // Eventually
 	});
 	
+	it("should not fail", function(){
+		NaN.should.not.equal(NaN); // NaH
+	});
+	
 	it("should fail", function(){
-		NaN.should.equal(NaN); // NaH
+		const A = {
+			alpha: "A",
+			bravo: "B",
+			delta: "D",
+			epsilon: "E"
+		};
+		
+		const B = {
+			Alpha: "A",
+			bravo: "B",
+			delta: "d",
+			epsilon: "E"
+		};
+		
+		A.should.equal(B);
 	});
 	
 	describe("Suite nesting", function(){

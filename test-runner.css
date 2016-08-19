@@ -33,7 +33,10 @@ html, body{
 		z-index: -9;
 	}
 
-#mocha code{
+#mocha code,
+#mocha ins,
+#mocha del,
+#mocha mark{
 	all: unset;
 }
 	/** Luminous syntax highlighting */
@@ -147,6 +150,7 @@ html, body{
 					text-align: center;
 					margin-right: .25ch;
 				}
+					/** Tick/Checkmark */
 					#mocha .pass > .test-title::after{
 						content: "\2713";
 						color: #3bbb33;
@@ -203,10 +207,50 @@ html, body{
 				border-left: 1px solid #6e2117;
 				white-space: pre;
 			}
+				#mocha .error-title{
+					max-width: 100%;
+					word-break: break-all;
+					white-space: pre-line;
+				}
+				
 				#mocha .stack-callee{        color: #c13928; }
 				#mocha .error-stack{         color: #7f261a; }
 				#mocha .stack-source{        color: #700;    }
 				#mocha .stack-source > span{ color: #c13928; }
+				
+				/** "+ expected/- actual" */
+				#mocha .diff-legend{
+					padding: .6em 0;
+					display: block;
+				}
+					#mocha .diff-expected{
+						color: #3bbb33;
+						padding-right: 1ch;
+					}
+				
+				/** Actual unified diff */
+				#mocha .diff-details{
+					color: #828282;
+					padding: .6em 0;
+					margin-left: 1em;
+					position: relative;
+				}
+					#mocha del {color: #fb0007}
+					#mocha ins {color: #2fb41d}
+					#mocha del > mark {color: #f00; background: #800}
+					#mocha ins > mark {color: #55ff07; background: #107702}
+					#mocha .diff-details > span {color: #6f6f6f; }
+					
+					/** Diff indicators */
+					#mocha .diff-details > del::before,
+					#mocha .diff-details > ins::before{
+						position: absolute;
+						padding-right: .4em;
+						line-height: 1.3;
+						right: 100%;
+					}
+						#mocha .diff-details > del::before{ content: "-" }
+						#mocha .diff-details > ins::before{ content: "+" }
 	
 	
 	#mocha .suite .suite{
