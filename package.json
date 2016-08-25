@@ -15,6 +15,7 @@
 	},
 	"dependencies": {
 		"get-options": ">=1.1.0",
+		"print": "*",
 		"mocha": "*",
 		"chai": "*",
 		"diff": "*"
