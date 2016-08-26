@@ -101,6 +101,10 @@ html, body{
 #mocha .suite{
 	margin-bottom: 1.25em;
 }
+	#mocha .collapsed.suite > .results{
+		display: none !important;
+	}
+	
 	/** Suite title */
 	#mocha .suite-title{
 		cursor: pointer;
@@ -135,6 +139,10 @@ html, body{
 			display: block;
 			color: #828282;
 		}
+			#mocha .collapsed.test > .test-title ~ *{
+				display: none !important;
+			}
+			
 			/** Test description */
 			#mocha .test-title{
 				padding: .15em 0;
