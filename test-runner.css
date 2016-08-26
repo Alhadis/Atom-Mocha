@@ -130,35 +130,36 @@ html, body{
 		margin-top: .4em;
 	}
 		#mocha .test{
-			margin: .3em 0;
 			position: relative;
 			display: block;
 			color: #828282;
 		}
 			/** Test description */
 			#mocha .test-title{
+				padding: .15em 0;
 				cursor: pointer;
+				position: relative;
 			}
 				/** Icon */
-				#mocha .test-title::after{
+				#mocha .test-title::before{
 					position: absolute;
-					top: 0;
+					top: 50%;
 					font-size: 1.5em;
-					line-height: .8;
+					line-height: 0;
 					right: 100%;
 					width: 1em;
 					text-align: center;
 					margin-right: .25ch;
 				}
 					/** Tick/Checkmark */
-					#mocha .pass > .test-title::after{
+					#mocha .pass > .test-title::before{
 						content: "\2713";
 						color: #3bbb33;
 					}
 				
 					#mocha .test-title:hover{                     color: #fff }
 					#mocha .pass > .test-title:hover > .duration{ color: #eee }
-					#mocha .pass > .test-title:hover::after{      color: #0f0 }
+					#mocha .pass > .test-title:hover::before{     color: #0f0 }
 				
 				/** Elapsed time */
 				#mocha .test .duration{
@@ -169,7 +170,7 @@ html, body{
 				#mocha .slow .duration,
 				#mocha .fail > .test-title{           color: #c13928 }
 				#mocha .fail > .test-title:hover{        color: #f00 }
-				#mocha .fail > .test-title::after{  content: "\2718" }
+				#mocha .fail > .test-title::before{ content: "\2718" }
 				#mocha .slow .duration::before,
 				#mocha .slow .duration::after,
 				#mocha .fail > .test-title > .duration::before,
@@ -185,7 +186,7 @@ html, body{
 				/** Pending tests */
 				#mocha .pending > .test-title,
 				#mocha .pending > .test-title:hover > h2,
-				#mocha .pending > .test-title::after{
+				#mocha .pending > .test-title::before{
 					content: "-";
 					cursor: default;
 					color: #2eaebb;
