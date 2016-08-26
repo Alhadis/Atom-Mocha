@@ -93,7 +93,8 @@ html, body{
 	top:    0;
 	left:   0;
 	right:  0;
-	bottom: 2em;
+	bottom: 0;
+	padding-bottom: 2em;
 	overflow: auto;
 	margin: 1ch;
 }
@@ -266,10 +267,10 @@ html, body{
 	left:    0;
 	z-index: 5;
 	margin:  0;
-	width:   100%;
 	color:   #bbb;
 	white-space: nowrap;
 	overflow: hidden;
+	background: rgba(0,0,0,.85);
 }
 	#mocha-stats > div{
 		display: inline-block;
