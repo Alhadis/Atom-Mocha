@@ -427,6 +427,7 @@ html, body{
 	}
 	#mocha-dots > .slow{ background: #9fa01c; }
 	#mocha-dots > .fail{ background: #c13928; }
+	#mocha-dots > .pending{ background: #2eaebb; }
 
 
 /** Minimal mode */
@@ -434,12 +435,13 @@ html, body{
 	position: static;
 }
 	#mocha.minimal .suite-title,
-	#mocha.minimal .test.pass{
+	#mocha.minimal .test{
 		display: none;
 	}
 		#mocha.minimal .suite.has-failures{
 			padding-bottom: 1em;
 		}
+			#mocha.minimal .test.fail,
 			#mocha.minimal .suite.has-failures > .suite-title{
 				display: block;
 				padding-bottom: 0;
