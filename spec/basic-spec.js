@@ -15,8 +15,6 @@ describe("This package", function(){
 		NaN.should.not.equal(NaN); // NaH
 	});
 	
-	it("might be written later"); // NaH
-	
 	it("should fail", function(){
 		const A = {
 			alpha: "A",
