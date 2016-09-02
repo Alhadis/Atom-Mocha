@@ -409,3 +409,45 @@ html, body{
 		#mocha.offset-down > .slide-indicator.down::before{
 			transform: scaleY(-1);
 		}
+
+
+/** Dot-strip */
+#mocha-dots{
+	margin: 1em .5em;
+}
+	#mocha-dots > .dot{
+		background: #333;
+		width:  1em;
+		height: 1em;
+		font-size: .9rem;
+		border-radius: 50%;
+		margin: 0 .25em .5em;
+		display: inline-block;
+		vertical-align: top;
+	}
+	#mocha-dots > .slow{ background: #9fa01c; }
+	#mocha-dots > .fail{ background: #c13928; }
+
+
+/** Minimal mode */
+#mocha.minimal > #mocha-report{
+	position: static;
+}
+	#mocha.minimal .suite-title,
+	#mocha.minimal .test.pass{
+		display: none;
+	}
+		#mocha.minimal .suite.has-failures{
+			padding-bottom: 1em;
+		}
+			#mocha.minimal .suite.has-failures > .suite-title{
+				display: block;
+				padding-bottom: 0;
+			}
+		#mocha.minimal .results,
+		#mocha.minimal .suite{
+			margin: 0;
+		}
+		#mocha.minimal .test-title::before{
+			content: none;
+		}

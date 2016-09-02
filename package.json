@@ -9,8 +9,13 @@
 	"atomTestRunner": "./bin/atom-mocha",
 	"atom-mocha": {
 		"autoIt": true,
-		"slide": true,
-		"title": "Terminal Emulator Emulator"
+		"minimal": true,
+		"title": "Terminal Emulator Emulator",
+		"headless": {
+			"mocha": {
+				"reporter": "dot"
+			}
+		}
 	},
 	"engines": {
 		"atom": ">1.6.0"
