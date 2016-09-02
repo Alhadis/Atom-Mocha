@@ -14,7 +14,7 @@ Installation
 2. Add this to your `package.json` file:
 
 	```json
-	"atomTestRunner": "./bin/atom-mocha"
+	"atomTestRunner": "./node_modules/.bin/atom-mocha"
 	```
 
 3. Quit and restart Atom to clear its internal cache.
