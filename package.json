@@ -8,7 +8,8 @@
 	"bin": "./bin/atom-mocha",
 	"atomTestRunner": "./bin/atom-mocha",
 	"atom-mocha": {
-		"autoIt": true
+		"autoIt": true,
+		"slide": true
 	},
 	"engines": {
 		"atom": ">1.6.0"

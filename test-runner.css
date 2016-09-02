@@ -73,6 +73,9 @@ html, body{
 }
 
 
+#mocha > .sliding-indicator{
+	display: none;
+}
 
 /** Duration */
 #mocha .duration{
@@ -305,3 +308,104 @@ html, body{
 		padding-left: 1em;
 		margin-left:  1em;
 	}
+
+
+/** Slide-enabled */
+#mocha.sliding{
+	transform: translate3D(0,0,0);
+	backface-visibility: hidden;
+	transition: .3s ease transform, .3s ease background-color;
+}
+	#mocha-report,
+	#mocha-stats{
+		transition: .4s ease opacity;
+	}
+	
+	/** Disclosure indicators */
+	#mocha.sliding > .slide-indicator{
+		display: block;
+		position: absolute;
+		font: 2.5em/1 "Octicons Regular";
+		transition: .3s ease opacity;
+		text-align: center;
+		cursor: pointer;
+		opacity: 0;
+		z-index: 6;
+		width:   5em;
+		height:  5em;
+	}
+		#mocha.sliding > .slide-indicator:hover{
+			opacity: .4;
+		}
+		
+		/** Positioning */
+		#mocha.sliding > .slide-indicator.left{  left:   0; }
+		#mocha.sliding > .slide-indicator.right{ right:  0; }
+		#mocha.sliding > .slide-indicator.up{    top:    0; }
+		#mocha.sliding > .slide-indicator.down{  bottom: 0; }
+		
+		#mocha.sliding > .slide-indicator.up,
+		#mocha.sliding > .slide-indicator.down{
+			transform: translateX(-50%);
+			left: 50%;
+			height: 1em;
+		}
+
+		#mocha.sliding > .slide-indicator.left,
+		#mocha.sliding > .slide-indicator.right{
+			transform: translateY(-50%);
+			top: 50%;
+			width: 1em;
+		}
+		
+		/** Arrowhead icons */
+		#mocha.sliding > .slide-indicator::before{
+			-webkit-font-smoothing: antialiased;
+			margin: -.5em 0 0;
+			position: absolute;
+			top:  50%;
+			left: 0;
+			right: 0;
+			text-align: center;
+		}
+			#mocha.sliding > .slide-indicator.up::before{    content: "\f0a2"; }
+			#mocha.sliding > .slide-indicator.down::before{  content: "\f0a3"; }
+			#mocha.sliding > .slide-indicator.left::before{  content: "\f0a4"; }
+			#mocha.sliding > .slide-indicator.right::before{ content: "\f078"; }
+
+	/** Hidden states */
+	#mocha.sliding[class*="offset"]{
+		background-color: transparent;
+	}
+		#mocha.sliding[class*="offset"] > .slide-indicator{
+			display: none;
+		}
+		#mocha.sliding[class*="offset"] > #mocha-report,
+		#mocha.sliding[class*="offset"] > #mocha-stats{
+			opacity: 0;
+		}
+	
+	#mocha.sliding.offset-left{  transform: translate3D(calc( 100%    - 2.5em), 0, 0); }
+	#mocha.sliding.offset-right{ transform: translate3D(calc(-100%    + 2.5em), 0, 0); }
+	#mocha.sliding.offset-down{  transform: translate3D(0, calc(-100% + 2.5em), 0); }
+	#mocha.sliding.offset-up{    transform: translate3D(0, calc( 100% - 2.5em), 0); }
+	
+	#mocha.offset-left > .slide-indicator.left,
+	#mocha.offset-right > .slide-indicator.right{
+		height: 100%;
+		display: block;
+	}
+		#mocha.offset-left  > .slide-indicator.left::before,
+		#mocha.offset-right > .slide-indicator.right::before{
+			transform: scale(-1, -1);
+		}
+	
+	#mocha.offset-up > .slide-indicator.up,
+	#mocha.offset-down > .slide-indicator.down{
+		width: 100%;
+		display: block;
+	}
+		#mocha.offset-up > .slide-indicator.up::before,
+		#mocha.offset-down > .slide-indicator.down::before{
+			transform: scaleY(-1);
+		}
