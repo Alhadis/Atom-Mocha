@@ -4,7 +4,7 @@ atom.document.body.className += " nah";
 
 describe("DOM", () => {
 	
-	it("checks class attributes correctly", () => {
+	it("shows what a failed class assertion looks like", () => {
 		const body = atom.document.body;
 		const html = atom.document.documentElement;
 		

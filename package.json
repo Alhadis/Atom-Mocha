@@ -9,6 +9,7 @@
 	"atomTestRunner": "./bin/atom-mocha",
 	"atom-mocha": {
 		"autoIt": true,
+		"tests": ["spec/subdir"],
 		"title": "Terminal Emulator Emulator"
 	},
 	"engines": {
