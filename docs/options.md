@@ -5,8 +5,8 @@ Options may be specified in `package.json` or `mocha.opts`.
 If duplicated, the latter takes precedence over the former.
 
 * [headless](#headless) / [interactive](#interactive)
-* [noExtensions](#noextensions)
 * [mocha](#mocha)
+* [noExtensions](#noextensions)
 * [optFiles](#optfiles)
 * [specPattern](#specpattern)
 * [tests](#tests)
@@ -32,16 +32,11 @@ For instance, perhaps you'd like headless tests to use Mocha's `landing` reporte
 "atom-mocha": {
 	"headless": {
 		"mocha": {"reporter": "landing"}
-	}	
+	}
 }
 ```
 
 Anything that's valid for `atom-mocha` is also valid for `headless` or `interactive`.
-
-
-
-### noExtensions
-Disables the loading of `extensions.js`. Consult the [extensions reference](./extensions.md) for details of what this entails.
 
 
 
@@ -72,6 +67,13 @@ Note that requesting the [`dot`](https://mochajs.org/#dot-matrix) reporter will
 implicitly enable the [`minimal`](#minimal) setting of the default HTML reporter.
 
 
+
+### noExtensions
+Disables the loading of `extensions.js`.
+Consult the [extensions reference](./extensions.md) for details of what this entails.
+
+
+
 ### optFiles
 An array of paths pointing to `mocha.opts` files to load.
 Only needed if your `mocha.opts` file is located in a different directory to your specs.
@@ -97,7 +99,7 @@ If you wanted to load files with a `-test` suffix as well, you might add this to
 Or in `mocha.opts`:
 
 ```ini
---spec-pattern   /-(spec|test)\.(coffee|js)$/i
+--spec-pattern /-(spec|test)\.(coffee|js)$/i
 ```
 
 
