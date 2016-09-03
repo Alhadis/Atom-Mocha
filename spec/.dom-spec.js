@@ -6,6 +6,9 @@ describe("DOM", () => {
 	
 	it("checks class attributes correctly", () => {
 		const body = atom.document.body;
-		expect(body).not.to.have.class("nah");
+		const html = atom.document.documentElement;
+		
+		html.classList.add("root");
+		expect([body, html]).to.have.class("platform-darwin", ["nah"]);
 	});
 });
