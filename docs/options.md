@@ -4,7 +4,7 @@ Option reference
 Options may be specified in `package.json` or `mocha.opts`.
 If duplicated, the latter takes precedence over the former.
 
-* [headless](#headless--interactive) / [interactive](#headless--interactive)
+* [headless](#headless) / [interactive](#interactive)
 * [noExtensions](#noextensions)
 * [mocha](#mocha)
 * [optFiles](#optfiles)
@@ -14,7 +14,7 @@ If duplicated, the latter takes precedence over the former.
 **Reporter-specific:**
 * [autoIt](#autoit)
 * [clipPaths](#clippaths)
-* [css](#css--js) / [js](#css--js)
+* [css](#css) / [js](#js)
 * [formatCode](#formatcode)
 * [minimal](#minimal)
 * [slide](#slide)
@@ -22,7 +22,7 @@ If duplicated, the latter takes precedence over the former.
 
 
 
-### headless / interactive
+### <a name="headless">headless</a> / <a name="interactive">interactive</a>
 __package.json only__  
 Allows different configurations to target different environments.
 
@@ -48,7 +48,28 @@ Disables the loading of `extensions.js`. Consult the [extensions reference](./ex
 ### mocha
 __package.json only__  
 An object containing [Mocha configuration](https://mochajs.org/#usage) settings.
+For example:
 
+~~~json
+"atom-mocha": {
+	"mocha": {
+		"bail": true,
+		"enableTimeouts": true,
+		"grep": "/(^tokenises|strings)\\b/i",
+		"reporter": "landing",
+		"retries": 1
+	}
+}
+~~~
+
+The `reporter` option defaults to whatever makes sense for the running environment.
+Headless tests use Mocha's [`spec`](https://mochajs.org/#reporters) reporter, while
+interactive tests use the bespoke TTY-styled reporter. These defaults are also used
+if an environment doesn't support a reporter's output (such as HTML in terminal, or
+monospaced/SGR-coloured patterns in interactive mode).
+
+Note that requesting the [`dot`](https://mochajs.org/#dot-matrix) reporter will
+implicitly enable the [`minimal`](#minimal) setting of the default HTML reporter.
 
 
 ### optFiles
@@ -124,7 +145,7 @@ Make stack traces less noisy by removing the package's base directory:
 To disable this in a `mocha.opts` file, use `--no-clip-paths`.
 
 
-### css / js
+### <a name="css">css</a> / <a name="js">js</a>
 Paths to extra stylesheets or scripts to attach to the spec-runner.
 
 ```json
