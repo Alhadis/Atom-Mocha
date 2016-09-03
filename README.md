@@ -38,4 +38,4 @@ Alternatively, you can use `package.json` instead:
 ~~~
 
 For details on Mocha's configuration settings, [consult their documentation](https://mochajs.org/#usage).
-Options specific to this spec-runner are [described in depth here](doc/options.md).
+Options specific to this spec-runner are [described in depth here](docs/options.md).
