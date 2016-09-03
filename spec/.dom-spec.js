@@ -9,6 +9,6 @@ describe("DOM", () => {
 		const html = atom.document.documentElement;
 		
 		html.classList.add("root");
-		expect([body, html]).to.have.class("platform-darwin", ["nah"]);
+		expect([body, html]).to.have.classes("platform-darwin", ["nah"]);
 	});
 });
