@@ -16,7 +16,7 @@ html, body{
 	
 	background: rgba(0,0,0,.9);
 	color: #fff;
-	font: 10pt Menloco, Menlo, Monaco, monospace;
+	font: 12pt/1.3 Menloco, Menlo, Monaco, Consolas, "DejaVu Sans Mono", monospace;
 	transition:
 		.0s step-start z-index,
 		.2s ease transform,
