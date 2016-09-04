@@ -155,7 +155,7 @@ Paths to extra stylesheets or scripts to attach to the spec-runner.
 
 ```json
 "atom-mocha": {
-	"css": "spec/assets/custom-counter.less",
+	"css": "spec/assets/some custom counter.less",
 	"js": [
 		"node_modules/less/dist/less.min.js",
 		"node_modules/annoying-nyan-cat/nyan.js"
@@ -164,6 +164,16 @@ Paths to extra stylesheets or scripts to attach to the spec-runner.
 ```
 
 This provides an extension point for authors wishing to extend or modify the default reporter.
+
+Paths are relative to whatever file defines them.
+So to write the above example in `mocha.opts`, you'd write this:
+
+```ini
+--css assets/some%20custom%20counter.less
+--js node_modules/less/dist/less.min.js node_modules/annoying-nyan-cat/nyan.js
+```
+
+Note the use of `%20` to encode spaces in the first filename.
 
 
 ### flipStack

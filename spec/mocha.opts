@@ -4,3 +4,5 @@
 --spec-pattern /-(spec|test)\.js$/i
 --title Terminal Emulator Emulator
 --hide-pending
+--css subdir/more%20or.less
+--js ../node_modules/less/dist/less.min.js
