@@ -10,6 +10,7 @@
 	"engines": {
 		"atom": ">1.6.0"
 	},
+	"files": ["bin", "lib"],
 	"dependencies": {
 		"get-options": ">=1.1.0",
 		"print": "*",
