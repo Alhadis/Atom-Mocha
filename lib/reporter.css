@@ -154,9 +154,8 @@ html, body{
 				/** Icon */
 				#mocha .test-title::before{
 					position: absolute;
-					top: 50%;
 					font-size: 1.5em;
-					line-height: 0;
+					line-height: 1;
 					right: 100%;
 					width: 1em;
 					text-align: center;
