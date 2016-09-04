@@ -18,6 +18,7 @@ If duplicated, the latter takes precedence over the former.
 * [flipStack](#flipstack)
 * [formatCode](#formatcode)
 * [hidePending](#hidepending)
+* [hideStatBar](#hidestatbar)
 * [minimal](#minimal)
 * [slide](#slide)
 * [title](#title)
@@ -185,6 +186,10 @@ To disable this option in a `mocha.opts` file, use `--no-format-code`.
 
 ### hidePending
 Hide all mention of [pending tests](https://mochajs.org/#pending-tests) in Mocha's output.
+
+
+### hideStatBar
+Hide the statbar at the bottom of the window.
 
 
 ### minimal

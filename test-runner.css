@@ -310,6 +310,11 @@ html, body{
 	}
 
 
+/** Hide statbar */
+.hide-stats > #mocha-report{ bottom: 0; }
+.hide-stats > #mocha-stats{ display: none; }
+
+
 /** Slide-enabled */
 #mocha.sliding{
 	transform: translate3D(0,0,0);
