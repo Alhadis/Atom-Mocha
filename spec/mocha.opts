@@ -1,3 +1,4 @@
+--auto-it
 --reporter atom
 --require chai/should
 --spec-pattern /-(spec|test)\.js$/i
