@@ -39,3 +39,10 @@ Alternatively, you can use `package.json` instead:
 
 For details on Mocha's configuration settings, [consult their documentation](https://mochajs.org/#usage).
 Options specific to this spec-runner are [described in depth here](docs/options.md).
+
+
+
+Tips
+----
+* Reload the spec-runner window by pressing <kbd>Ctrl/Cmd + R</kbd>.
+* Tests can be batch-toggled by <kbd>Alt</kbd>-clicking their title.
