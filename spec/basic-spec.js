@@ -54,6 +54,14 @@ describe("Second suite at top-level", function(){
 	
 	
 	it("breaks something", function(){
-		oops();
+		something();
+	});
+});
+
+
+describe("Chai extensions", () => {
+	
+	it("tests the existOnDisk property", () => {
+		expect(__filename).not.to.existOnDisk;
 	});
 });
