@@ -17,6 +17,7 @@ If duplicated, the latter takes precedence over the former.
 * [css](#css) / [js](#js)
 * [flipStack](#flipstack)
 * [formatCode](#formatcode)
+* [hidePending](#hidepending)
 * [minimal](#minimal)
 * [slide](#slide)
 * [title](#title)
@@ -180,6 +181,10 @@ The specific effects of this option are:
 * Syntax highlighting (using Atom's [JavaScript grammar](https://github.com/atom/language-javascript))
 
 To disable this option in a `mocha.opts` file, use `--no-format-code`.
+
+
+### hidePending
+Hide all mention of [pending tests](https://mochajs.org/#pending-tests) in Mocha's output.
 
 
 ### minimal

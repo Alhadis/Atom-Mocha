@@ -3,3 +3,4 @@
 --require chai/should
 --spec-pattern /-(spec|test)\.js$/i
 --title Terminal Emulator Emulator
+--hide-pending
