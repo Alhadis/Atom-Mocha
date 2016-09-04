@@ -15,6 +15,7 @@ If duplicated, the latter takes precedence over the former.
 * [autoIt](#autoit)
 * [clipPaths](#clippaths)
 * [css](#css) / [js](#js)
+* [flipStack](#flipstack)
 * [formatCode](#formatcode)
 * [minimal](#minimal)
 * [slide](#slide)
@@ -161,6 +162,10 @@ Paths to extra stylesheets or scripts to attach to the spec-runner.
 ```
 
 This provides an extension point for authors wishing to extend or modify the default reporter.
+
+
+### flipStack
+Print stack traces in reverse order, placing more recent calls at the bottom.
 
 
 ### formatCode
