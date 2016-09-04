@@ -49,7 +49,7 @@ html, body{
 
 #mocha pre{
 	all: unset;
-	white-space: pre;
+	white-space: pre-line;
 	font-family: monospace;
 	display: block;
 	margin: 1em 0;
@@ -217,12 +217,11 @@ html, body{
 				margin: .5em 0;
 				padding: 0 1em;
 				border-left: 1px solid #6e2117;
-				white-space: pre;
+				white-space: pre-line;
 			}
 				#mocha .error-title{
 					max-width: 100%;
 					word-break: break-all;
-					white-space: pre-line;
 				}
 				
 				#mocha .stack-callee{        color: #c13928; }
@@ -246,6 +245,7 @@ html, body{
 					padding: .6em 0;
 					margin-left: 1em;
 					position: relative;
+					white-space: pre;
 				}
 					#mocha del {color: #fb0007}
 					#mocha ins {color: #2fb41d}
