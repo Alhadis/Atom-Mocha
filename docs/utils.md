@@ -48,6 +48,23 @@ This generates the following structure:
 
 
 
+escapeRegExp (input)
+--------------------
+Escape special regex characters within a string.
+
+**Returns:** [Function]
+
+**Parameters:**  
+* [String] `input`
+
+**Examples:**
+~~~js
+escapeRegExp("file.js (2 KBs)"); // -> "file\\.js \\(2 KBs\\)"
+~~~
+
+
+
+
 findBasePath (paths)
 --------------------
 Locate the root directory shared by multiple paths.
@@ -69,6 +86,25 @@ const paths = [
 findBasePath(paths); // -> "/Users/johngardner/Labs/Atom-Mocha"
 ~~~
 
+
+
+
+getScrollbarWidth
+-----------------
+Return the width of the scrollbars being displayed by this user's OS/device.
+
+**Returns:** [Number]
+
+**Example:**
+~~~js
+const width = getScrollBarWidth(); // Windows: 17, macOS: 0
+
+// Compensate for added scrollbar
+if(width){
+	element.style.right = "-" + width + "px";
+	element.style.paddingRight = width + "px";
+}
+~~~
 
 
 
@@ -172,6 +208,7 @@ regexFromString("\\d+\\.\\d+$"); // ->  /\d+\.\d+$/
 [Element]:   https://developer.mozilla.org/en-US/docs/Web/API/Element
 [Function]:  https://mdn.io/JavaScript/Reference/Global_Objects/Function
 [Node]:      https://developer.mozilla.org/en-US/docs/Web/API/Node
+[Number]:    https://mdn.io/JavaScript/Reference/Global_Objects/Number
 [Object]:    https://mdn.io/JavaScript/Reference/Global_Objects/Object
 [RegExp]:    https://mdn.io/JavaScript/Reference/Global_Objects/RegExp
 [String]:    https://mdn.io/JavaScript/Reference/Global_Objects/String
