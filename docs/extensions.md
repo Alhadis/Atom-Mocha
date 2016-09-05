@@ -4,7 +4,11 @@ Extensions
 Atom-Mocha includes a few extras to help with writing specs:
 
 * [.class](#class)
+* [.equalPath](#equalpath)
+* [.existOnDisk](#existondisk)
+* [.focus](#focus)
 * [attachToDOM](#attachtodom)
+* [resetDOM](#resetdom)
 
 These are always available unless [`noExtensions`](options.md#noextensions) is set.
 
@@ -18,7 +22,7 @@ global.expect = Chai.expect;
 
 
 ### .class
-A Chai extension that examines the `classList` of an HTML element:
+Asserts that an HTML element's `classList` contains one or more CSS classes.
 
 ```js
 expect(div).to.have.class("error-msg");
@@ -35,6 +39,37 @@ Both `class` and `classes` are equivalent invocations; the pluralised form exist
 
 
 
+### .equalPath
+Asserts that two filesystem paths are equal.
+
+```js
+expect("/foo/bar/..").to.equalPath("/foo");
+```
+
+
+
+### .existOnDisk
+Asserts that a given string matches an existing file or directory:
+
+```js
+expect("/usr/local/").to.existOnDisk;
+expect(__filename).to.existOnDisk;
+"/usr/local/bin/atom".should.existOnDisk;
+"/::<:N:O:P:E:>::*?/".should.not.existOnDisk;
+```
+
+
+
+### .focus
+Assert that an HTML element has user focus, or contains an element which does.
+
+```js
+expect(treeView).to.have.focus;
+expect(New("div")).not.to.have.focus;
+document.activeElement.should.have.focus;
+```
+
+
 ### attachToDOM
 Attaches an HTML element to the spec-runner window. Does nothing if running headlessly.
 
@@ -44,3 +79,19 @@ attachToDOM(workspace);
 ```
 
 Fulfils the same duty as Atom's `jasmine.attachToDOM` extension.
+
+
+
+### resetDOM
+Removes unrecognised DOM elements from the spec-runner's `body` element. Complements [`attachToDOM`](#attachtodom).
+
+Does nothing if running headlessly.
+
+```js
+afterEach(() => resetDOM());
+```
+
+__WARNING:__  
+This wipes any element that isn't `body > #mocha`. Avoid using this function if:
+* You have a custom reporter with different element IDs
+* Have programmatically added extra feedback elements using the [`js`](options.md#js) option (which sit outside the `#mocha` wrapper).
