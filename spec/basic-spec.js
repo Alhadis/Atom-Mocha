@@ -66,4 +66,11 @@ describe("Chai extensions", () => {
 	it("tests the existOnDisk property", () => {
 		expect(__filename).not.to.existOnDisk;
 	});
+	
+	it("tests user focus", () => {
+		const el = document.createElement("input");
+		el.autofocus = true;
+		attachToDOM(el);
+		expect(el).to.have.focus
+	});
 });
