@@ -15,6 +15,7 @@ If duplicated, the latter takes precedence over the former.
 * [autoIt](#autoit)
 * [clipPaths](#clippaths)
 * [css](#css) / [js](#js)
+* [escapeHTML](#escapehtml)
 * [flipStack](#flipstack)
 * [formatCode](#formatcode)
 * [hidePending](#hidepending)
@@ -174,6 +175,18 @@ So to write the above example in `mocha.opts`, you'd write this:
 ```
 
 Note the use of `%20` to encode spaces in the first filename.
+
+
+### escapeHTML
+__Default: Enabled__  
+Escape `< > &` in failed assertion titles.
+
+Generally, this is desired and expected behaviour.
+Depending on what you're testing, however, it may be cleaner to show embedded HTML:
+
+<img src="img/escape-html.png" width="800" alt="escapeHTML comparison" />
+
+To disable this setting in a `mocha.opts` file, use `--no-escape-html`.
 
 
 ### flipStack
