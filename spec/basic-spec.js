@@ -63,6 +63,8 @@ describe("Second suite at top-level", function(){
 
 describe("Chai extensions", () => {
 	
+	afterEach(() => resetDOM());
+	
 	it("tests the existOnDisk property", () => {
 		expect(__filename).not.to.existOnDisk;
 	});
@@ -72,5 +74,9 @@ describe("Chai extensions", () => {
 		el.autofocus = true;
 		attachToDOM(el);
 		expect(el).to.have.focus
+	});
+	
+	it("resets the DOM", () => {
+		expect(document.body.childElementCount).to.equal(1);
 	});
 });
