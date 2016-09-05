@@ -66,7 +66,11 @@ describe("Chai extensions", () => {
 	afterEach(() => resetDOM());
 	
 	it("tests the existOnDisk property", () => {
-		expect(__filename).not.to.existOnDisk;
+		expect(__filename).to.existOnDisk;
+	});
+	
+	it("asserts pathname equality", () => {
+		expect("/foo/bar//baz/asdf/quux/..").to.equalPath("/foo/bar/baz/asdf");
 	});
 	
 	it("tests user focus", () => {
