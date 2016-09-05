@@ -197,7 +197,7 @@ Print stack traces in reverse order, placing more recent calls at the bottom.
 __Default: Enabled__  
 Prettify the contents of embedded JavaScript snippets.
 
-<img src="img/format-code.png" width="528" alt="formatCode comparison" />
+<img src="img/format-code.png" width="557" alt="formatCode comparison" />
 
 The specific effects of this option are:
 * Removal of containing `function` headers
