@@ -74,6 +74,7 @@ describe("Chai extensions", () => {
 		el.autofocus = true;
 		attachToDOM(el);
 		expect(el).to.have.focus
+		expect(document.createElement("div")).not.to.have.focus
 	});
 	
 	it("resets the DOM", () => {
