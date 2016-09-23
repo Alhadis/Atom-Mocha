@@ -112,6 +112,7 @@ html, body{
 	
 	/** Suite title */
 	#mocha .suite-title{
+		-webkit-user-select: none;
 		cursor: pointer;
 		display: block;
 		color: #fff;
@@ -150,6 +151,7 @@ html, body{
 			
 			/** Test description */
 			#mocha .test-title{
+				-webkit-user-select: none;
 				padding: .15em 0;
 				cursor: pointer;
 				position: relative;
