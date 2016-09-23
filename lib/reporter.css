@@ -57,6 +57,9 @@ html, body{
 	#mocha pre[hidden]{
 		display: none !important;
 	}
+	#mocha code{
+		white-space: pre;
+	}
 
 #mocha a,
 #mocha a:link,
