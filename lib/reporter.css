@@ -14,9 +14,9 @@ html, body{
 	bottom: 0;
 	z-index: 9;
 	
-	background: rgba(0,0,0,.9);
+	background: rgba(0,0,0,.8);
 	color: #fff;
-	font: 12pt/1.3 Menloco, Menlo, Monaco, Consolas, "DejaVu Sans Mono", monospace;
+	font: 12pt/1.3 Menloco, Menlig, Menlo, Monaco, Consolas, "DejaVu Sans Mono", monospace;
 	transition:
 		.0s step-start z-index,
 		.2s ease transform,

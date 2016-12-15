@@ -6,6 +6,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 
 [Unpublished]
 ------------------------------------------------------------------------
+* **Added:** Opacity option for default reporter
 * **Fixed:** Flash of unstyled content when launching spec-runner
 
 

@@ -21,6 +21,7 @@ If duplicated, the latter takes precedence over the former.
 * [hidePending](#hidepending)
 * [hideStatBar](#hidestatbar)
 * [minimal](#minimal)
+* [opacity](#opacity)
 * [slide](#slide)
 * [title](#title)
 
@@ -219,6 +220,11 @@ Hide the statbar at the bottom of the window.
 Use dots to represent each test, highlighting failures.
 
 <img src="img/minimal.png" width="520" alt="Minimal Mocha" />
+
+
+### opacity
+__Default: 0.8__  
+Set the translucency of the feedback layer. This probably only matters if you're attaching elements with `attachToDOM`.
 
 
 ### slide
