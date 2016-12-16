@@ -9,6 +9,7 @@ Atom-Mocha includes a few extras to help with writing specs:
 * [.focus](#focus)
 * [attachToDOM](#attachtodom)
 * [resetDOM](#resetdom)
+* [unlessOnWindows](#unlessonwindows)
 
 These are always available unless [`noExtensions`](options.md#noextensions) is set.
 
@@ -95,3 +96,28 @@ __WARNING:__
 This wipes any element that isn't `body > #mocha`. Avoid using this function if:
 * You have a custom reporter with different element IDs
 * Have programmatically added extra feedback elements using the [`js`](options.md#js) option (which sit outside the `#mocha` wrapper).
+
+
+
+### unlessOnWindows
+Predicate to skip POSIX-only tests. Mocha's `.skip` function flags a test
+as `pending`, implying temporary omission. For tests which are impossible
+to run on Windows, this feedback is rarely warranted or desired.
+
+`unlessOnWindows` allows tests to be silently skipped if run on Windows.
+No feedback is emitted, and no tests are marked pending. The whole block
+becomes invisible to the spec-runner:
+
+~~~js
+unlessOnWindows.describe("Symlinks", …);
+unlessOnWindows.it("tests hard-links", …);
+unlessOnWindows.specify("More symlinks", …);
+~~~
+
+Arbitrary callbacks are also supported:
+
+~~~js
+unlessOnWindows(function(){
+	unixyStuff(…);
+});
+~~~

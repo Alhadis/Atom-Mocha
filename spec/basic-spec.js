@@ -58,6 +58,10 @@ describe("Second suite at top-level", function(){
 	it("breaks something", function(){
 		something();
 	});
+	
+	unlessOnWindows.it("enjoys real symbolic links", () => {
+		"Any Unix-like system".should.be.ok;
+	});
 });
 
 
