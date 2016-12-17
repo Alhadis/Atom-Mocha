@@ -4,8 +4,9 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
-[Unpublished]
+[v1.0.2]
 ------------------------------------------------------------------------
+**December 18th, 2016**  
 * **Added:** Feature to gracefully skip POSIX-dependent tests on Windows
 * **Added:** Auto-scroll and opacity options for default reporter
 * **Added:** Feedback line to indicate when tests have finished
@@ -28,6 +29,7 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v1.0.1...HEAD
+[Unpublished]: ../../compare/v1.0.2...HEAD
+[v1.0.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.0.2
 [v1.0.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.0.1
 [v1.0.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.0.0
