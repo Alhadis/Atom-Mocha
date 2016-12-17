@@ -13,6 +13,7 @@ If duplicated, the latter takes precedence over the former.
 
 **Reporter-specific:**
 * [autoIt](#autoit)
+* [autoScroll](#autoscroll)
 * [clipPaths](#clippaths)
 * [css](#css) / [js](#js)
 * [escapeHTML](#escapehtml)
@@ -141,6 +142,13 @@ it("runs a test", () => {});
 
 Only applicable when Mocha's [`ui` setting](https://mochajs.org/#u---ui-name) is set to `bdd`.
 
+
+
+### autoScroll
+__Default: Enabled__  
+Automatically scroll to tests when they finish.
+
+To disable this in a `mocha.opts` file, use `--no-auto-scroll`.
 
 
 ### clipPaths

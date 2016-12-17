@@ -7,7 +7,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 [Unpublished]
 ------------------------------------------------------------------------
 * **Added:** Feature to gracefully skip POSIX-dependent tests on Windows
-* **Added:** Opacity option for default reporter
+* **Added:** Auto-scroll and opacity options for default reporter
 * **Fixed:** Flash of unstyled content when launching spec-runner
 
 
