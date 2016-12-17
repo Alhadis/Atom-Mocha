@@ -99,7 +99,7 @@ html, body{
 	top:    0;
 	left:   0;
 	right:  0;
-	bottom: 2em;
+	bottom: 1.7em;
 	overflow: auto;
 	margin: 1ch;
 }
@@ -276,7 +276,7 @@ html, body{
 /** Stats anchored to bottom */
 #mocha-stats{
 	position: absolute;
-	padding: .9em;
+	padding: .5em;
 	bottom:  0;
 	left:    0;
 	z-index: 5;
