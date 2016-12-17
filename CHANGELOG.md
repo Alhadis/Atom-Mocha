@@ -4,6 +4,11 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* **Fixed:** Summary element duplicated when bailing with multiple files
+
+
 [v1.0.2]
 ------------------------------------------------------------------------
 **December 18th, 2016**  
