@@ -6,6 +6,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 
 [Unpublished]
 ------------------------------------------------------------------------
+* **Added:** Chai extension to test element's visibility in the DOM tree
 * **Fixed:** Summary element duplicated when bailing with multiple files
 
 

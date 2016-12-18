@@ -84,6 +84,16 @@ describe("Chai extensions", () => {
 		expect(el).to.have.focus
 		expect(document.createElement("div")).not.to.have.focus
 	});
+
+	it("tests element visibility", () => {
+		const el = document.createElement("div");
+		expect(el).to.not.be.drawn;
+		el.style.visibility = "hidden";
+		document.body.appendChild(el);
+		expect(el).to.be.drawn;
+		el.style.visibility = "hidden";
+		expect(el).to.be.drawn;
+	});
 	
 	it("resets the DOM", () => {
 		expect(document.body.childElementCount).to.equal(1);

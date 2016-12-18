@@ -4,6 +4,7 @@ Extensions
 Atom-Mocha includes a few extras to help with writing specs:
 
 * [.class](#class)
+* [.drawn](#drawn)
 * [.equalPath](#equalpath)
 * [.existOnDisk](#existondisk)
 * [.focus](#focus)
@@ -38,6 +39,37 @@ The function is variadic: multiple arguments of either type may be passed at onc
 
 Both `class` and `classes` are equivalent invocations; the pluralised form exists only for readability.
 
+
+
+### .drawn
+Assert that an HTML element is being rendered in the DOM tree.
+
+```js
+expect(New("div")).not.to.be.drawn;
+expect(document.body).to.be.drawn;
+```
+
+Note that elements with `opacity: 0` or `visibility: hidden` are still "drawn",
+because their dimensions affect the document's layout:
+
+```js
+expect(New("div", {style: {opacity: 0}})).to.be.drawn;
+expect(New("div", {style: {visibility: "hidden"}})).to.be.drawn;
+```
+
+The same is true of positioned elements which are offset outside the viewport:
+
+```css
+#hidden-block{
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+}
+```
+
+```js
+expect(document.querySelector("#hidden-block")).to.be.drawn;
+```
 
 
 ### .equalPath
