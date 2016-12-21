@@ -6,6 +6,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 
 [Unpublished]
 ------------------------------------------------------------------------
+* **Added:** Ability to open resources by clicking paths in stack-traces
 * **Added:** Chai extension to test element's visibility in the DOM tree
 * **Fixed:** Summary element duplicated when bailing with multiple files
 * **Fixed:** Modal dialogues appearing over feedback layer

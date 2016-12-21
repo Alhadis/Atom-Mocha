@@ -21,6 +21,7 @@ If duplicated, the latter takes precedence over the former.
 * [formatCode](#formatcode)
 * [hidePending](#hidepending)
 * [hideStatBar](#hidestatbar)
+* [linkPaths](#linkpaths)
 * [minimal](#minimal)
 * [opacity](#opacity)
 * [slide](#slide)
@@ -222,6 +223,13 @@ Hide all mention of [pending tests](https://mochajs.org/#pending-tests) in Mocha
 
 ### hideStatBar
 Hide the statbar at the bottom of the window.
+
+
+### linkPaths
+__Default: Enabled__  
+Link sources in stack-traces to their offending lines of code when clicked on.
+
+To disable this option in a `mocha.opts` file, use `--no-link-paths`.
 
 
 ### minimal

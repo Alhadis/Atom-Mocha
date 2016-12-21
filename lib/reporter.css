@@ -233,6 +233,12 @@ html, body{
 				#mocha .stack-source{        color: #700;    }
 				#mocha .stack-source > span{ color: #c13928; }
 				
+				/** Source-path links */
+				#mocha .stack-source.link{          cursor: pointer; }
+				#mocha .stack-source.link:hover{        color: #700; }
+				#mocha .stack-source.link:hover > span{ color: #f00; }
+					
+				
 				/** "+ expected/- actual" */
 				#mocha .diff-legend{
 					padding: .6em 0;
