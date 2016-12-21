@@ -4,8 +4,9 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
-[Unpublished]
+[v1.1.0]
 ------------------------------------------------------------------------
+**December 22nd, 2016**  
 * **Added:** Ability to open resources by clicking paths in stack-traces
 * **Added:** Chai extension to test element's visibility in the DOM tree
 * **Fixed:** ANSI escape codes included when redirecting headless output
@@ -39,7 +40,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v1.0.2...HEAD
+[Unpublished]: ../../compare/v1.1.0...HEAD
+[v1.1.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.1.0
 [v1.0.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.0.2
 [v1.0.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.0.1
 [v1.0.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.0.0
