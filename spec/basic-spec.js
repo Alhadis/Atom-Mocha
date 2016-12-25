@@ -98,4 +98,9 @@ describe("Chai extensions", () => {
 	it("resets the DOM", () => {
 		expect(document.body.childElementCount).to.equal(1);
 	});
+	
+	when("it thinks of a good idea", () =>
+		it("quickly implements it before it forgets", () => {
+			global.when.should.be.a.function;
+		}));
 });

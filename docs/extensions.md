@@ -11,6 +11,7 @@ Atom-Mocha includes a few extras to help with writing specs:
 * [attachToDOM](#attachtodom)
 * [resetDOM](#resetdom)
 * [unlessOnWindows](#unlessonwindows)
+* [when](#when)
 
 These are always available unless [`noExtensions`](options.md#noextensions) is set.
 
@@ -153,3 +154,20 @@ unlessOnWindows(function(){
 	unixyStuff(…);
 });
 ~~~
+
+
+
+### when
+Call Mocha's `describe()` with `"When "` prepended to its description:
+
+~~~js
+when("colours are disabled", () =>
+	it("shows an uncoloured icon", () => {
+		…logic
+	}));
+~~~
+
+Complements the [`autoIt`][] setting, and helps specs read more naturally.
+Only globalised if `when` doesn't already exist on the `global` object.
+
+[`autoIt`]: options.md#autoit
