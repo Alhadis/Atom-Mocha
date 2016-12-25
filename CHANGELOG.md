@@ -4,6 +4,11 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* **Fixed:** Plural missing in summary if bailing on `11` or `111` tests
+
+
 [v1.1.0]
 ------------------------------------------------------------------------
 **December 22nd, 2016**  
