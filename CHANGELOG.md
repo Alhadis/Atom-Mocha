@@ -4,8 +4,9 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
-[Unpublished]
+[v1.1.1]
 ------------------------------------------------------------------------
+**December 27th, 2016**  
 * **Added:** [`when()`](docs/extensions.md#autoit) helper for BDD specs
 * **Changed:** [`slide`](docs/options.md#slide) now enabled by default
 * **Fixed:** Plural missing in summary if bailing on `11` or `111` tests
@@ -47,7 +48,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v1.1.0...HEAD
+[Unpublished]: ../../compare/v1.1.1...HEAD
+[v1.1.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.1.1
 [v1.1.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.1.0
 [v1.0.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.0.2
 [v1.0.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.0.1
