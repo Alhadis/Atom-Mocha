@@ -7,6 +7,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 [Unpublished]
 ------------------------------------------------------------------------
 * **Added:** [`when()`](docs/extensions.md#autoit) helper for BDD specs
+* **Changed:** [`slide`](docs/options.md#slide) now enabled by default
 * **Fixed:** Plural missing in summary if bailing on `11` or `111` tests
 
 

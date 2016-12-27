@@ -244,6 +244,7 @@ Set the translucency of the feedback layer. This probably only matters if you're
 
 
 ### slide
+__Default:__ `true`  
 Allow the feedback layer to be toggled away, exposing anything added underneath (such as workspaces added with [`attachToDOM`](extensions.md#attachtodom)).
 
 <img src="img/slide.gif" width="625" alt="603 KBs of unapologetic bandwidth drain" />
@@ -252,7 +253,9 @@ This is intended to help debug failed tests by making the DOM easier to examine.
 Works well with Mocha's [`--bail`](https://mochajs.org/#b---bail).
 
 To restrict sliding to certain edges, pass any combination of `up`, `down`, `left` and `right`.
-Passing `true` will enable sliding in all directions.
+Passing `false` disables sliding completely.
+
+To disable sliding in a `mocha.opts` file, use `--no-slide`.
 
 
 ### title
