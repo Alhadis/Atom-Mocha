@@ -1,6 +1,6 @@
-#!/usr/local/bin/node --es_staging
+#!/usr/bin/env node
 "use strict";
 
 const AtomMocha = require("../lib/main.js");
-module.exports  = args => 
+module.exports  = args =>
 	new AtomMocha(args).run(args);
