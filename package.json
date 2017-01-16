@@ -5,8 +5,9 @@
 	"repository": "https://github.com/Alhadis/Atom-Mocha",
 	"author": "John Gardner <gardnerjohng@gmail.com>",
 	"license": "ISC",
-	"bin": "./bin/atom-mocha",
-	"atomTestRunner": "./bin/atom-mocha",
+	"main": "./index.js",
+	"atomTestRunner": "./index.js",
+	"scripts": {"install": "node ./bin/post-install.js"},
 	"engines": {
 		"atom": ">1.6.0"
 	},

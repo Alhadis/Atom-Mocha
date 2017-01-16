@@ -4,6 +4,13 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* **Added:** Post-install hook to add `atomTestRunner` to `package.json`
+* **Changed:** Installation process; update `package.json` if upgrading
+* **Fixed:** Glaring lack of Windows support
+
+
 [v1.1.1]
 ------------------------------------------------------------------------
 **December 27th, 2016**  

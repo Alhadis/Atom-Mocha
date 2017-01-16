@@ -9,14 +9,13 @@ Run package specs in [Atom](https://atom.io/) using [Mocha](https://mochajs.org/
 
 Installation
 ------------
-1. Run `npm install atom-mocha --save-dev`
-2. Add this to your `package.json` file:
+Run `npm install atom-mocha --save-dev` in your package's directory.
 
-	```json
-	"atomTestRunner": "./node_modules/.bin/atom-mocha"
-	```
+If nothing's happening:
+* Check your `package.json` file contains `"atomTestRunner": "atom-mocha"`
+* Atom may have cached your package's metadata. Refresh it by quitting and restarting the program.
 
-3. Quit and restart Atom to clear its internal cache.
+If you're still experiencing difficulties, [please file an issue](https://github.com/Alhadis/Atom-Mocha/issues).
 
 
 Chai's [expect](http://chaijs.com/api/bdd/) function is automatically globalised when running specs, so you don't need to `require` it in every spec-file.
