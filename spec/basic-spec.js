@@ -59,6 +59,16 @@ describe("Second suite at top-level", function(){
 		something();
 	});
 	
+	it("didn't learn from its mistake", () => {
+		class Glass{constructor(){smash()}}
+		new Glass();
+	});
+	
+	it("never learns from its mistake", () => {
+		new class{constructor(){smash()}}
+		new Glass();
+	});
+	
 	unlessOnWindows.it("enjoys real symbolic links", () => {
 		"Any Unix-like system".should.be.ok;
 	});
