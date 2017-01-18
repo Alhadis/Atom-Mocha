@@ -40,10 +40,6 @@ describe("This package", function(){
 		it("does something useful eventually", function(done){
 			setTimeout(_ => done(), 40);
 		});
-		
-		it("still wakes up unemployed", function(){
-			(!this).should.not.be.true;
-		});
 	});
 });
 
@@ -57,16 +53,6 @@ describe("Second suite at top-level", function(){
 	
 	it("breaks something", function(){
 		something();
-	});
-	
-	it("didn't learn from its mistake", () => {
-		class Glass{constructor(){smash()}}
-		new Glass();
-	});
-	
-	it("never learns from its mistake", () => {
-		new class{constructor(){smash()}}
-		new Glass();
 	});
 	
 	unlessOnWindows.it("enjoys real symbolic links", () => {
