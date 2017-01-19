@@ -4,8 +4,9 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
-[Unpublished]
+[v2.0.0]
 ------------------------------------------------------------------------
+**January 19th, 2017**  
 * **Added:** Option to customise which lines are hidden in stack-traces
 * **Added:** Post-install hook to add `atomTestRunner` to `package.json`
 * **Changed:** Installation process; update `package.json` if upgrading
@@ -58,7 +59,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v1.1.1...HEAD
+[Unpublished]: ../../compare/v2.0.0...HEAD
+[v2.0.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.0
 [v1.1.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.1.1
 [v1.1.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.1.0
 [v1.0.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.0.2
