@@ -10,7 +10,8 @@ This project honours [Semantic Versioning](http://semver.org/).
 * **Added:** Post-install hook to add `atomTestRunner` to `package.json`
 * **Changed:** Installation process; update `package.json` if upgrading
 * **Changed:** Pattern to match spec-files; now includes `-test` suffix
-* **Fixed:** Glaring lack of Windows support
+* **Fixed:** Total lack of Windows support
+* **Removed:** Executable file for test-runner
 
 
 [v1.1.1]
