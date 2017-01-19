@@ -18,9 +18,6 @@ If nothing's happening:
 If you're still experiencing difficulties, [please file an issue](https://github.com/Alhadis/Atom-Mocha/issues).
 
 
-Chai's [expect](http://chaijs.com/api/bdd/) function is automatically globalised when running specs, so you don't need to `require` it in every spec-file.
-Check the [extensions reference](docs/extensions.md) for details on what's available.
-
 
 Configuration
 -------------
@@ -41,7 +38,9 @@ Options specific to this spec-runner are [described in depth here](docs/options.
 
 
 
-Tips
-----
+Reminders
+---------
+* Chai's [expect](http://chaijs.com/api/bdd/) function is automatically globalised for you.
+* [Nifty extras are available](docs/extensions.md) to help with writing tests.
 * Reload the spec-runner window by pressing <kbd>Ctrl/Cmd + R</kbd>.
 * Tests can be batch-toggled by <kbd>Alt</kbd>-clicking their title.
