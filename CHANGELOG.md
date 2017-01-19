@@ -4,6 +4,12 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[v2.0.1]
+------------------------------------------------------------------------
+**January 19th, 2017**  
+* **Fixed:** Breakage when installing through APM
+
+
 [v2.0.0]
 ------------------------------------------------------------------------
 **January 19th, 2017**  
@@ -59,7 +65,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v2.0.0...HEAD
+[Unpublished]: ../../compare/v2.0.1...HEAD
+[v2.0.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.1
 [v2.0.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.0
 [v1.1.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.1.1
 [v1.1.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.1.0
