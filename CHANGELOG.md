@@ -6,8 +6,10 @@ This project honours [Semantic Versioning](http://semver.org/).
 
 [Unpublished]
 ------------------------------------------------------------------------
+* **Added:** Option to customise which lines are hidden in stack-traces
 * **Added:** Post-install hook to add `atomTestRunner` to `package.json`
 * **Changed:** Installation process; update `package.json` if upgrading
+* **Changed:** Pattern to match spec-files; now includes `-test` suffix
 * **Fixed:** Glaring lack of Windows support
 
 

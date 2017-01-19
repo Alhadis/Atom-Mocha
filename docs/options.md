@@ -25,6 +25,7 @@ If duplicated, the latter takes precedence over the former.
 * [minimal](#minimal)
 * [opacity](#opacity)
 * [slide](#slide)
+* [stackFilter](#stackfilter)
 * [title](#title)
 
 
@@ -93,21 +94,21 @@ This limitation may be fixed in future to permit directory-specific configuratio
 
 ### specPattern
 A regular expression that determines which files are loaded as specs.
-By default, anything ending in `-spec.js` or `-spec.coffee` is treated as a spec.
+Default pattern:
 
-If you wanted to load files with a `-test` suffix as well, you might add this to your `package.json`:
+~~~js
+/[-_.](?:spec|test)\.(?:coffee|js)$/i
+~~~
 
-```json
-"atom-mocha": {
-	"specPattern": "/-(spec|test)\\.(coffee|js)$/i"
-}
-```
+Which matches any of the following filenames:
 
-Or in `mocha.opts`:
-
-```ini
---spec-pattern /-(spec|test)\.(coffee|js)$/i
-```
+~~~
+matched.test.js
+matched-spec.coffee
+MATCHED.TEST.CofFEE
+also_a_spec.js
+not-used.js
+~~~
 
 
 
@@ -256,6 +257,11 @@ To restrict sliding to certain edges, pass any combination of `up`, `down`, `lef
 Passing `false` disables sliding completely.
 
 To disable sliding in a `mocha.opts` file, use `--no-slide`.
+
+
+### stackFilter
+__Default:__ `/node_modules([\\\/])mocha(?:\1|\.js|[:\)])/`  
+RegExp to filter unwanted lines from stack traces.
 
 
 ### title
