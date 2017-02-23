@@ -100,3 +100,11 @@ describe("Chai extensions", () => {
 			global.when.should.be.a.function;
 		}));
 });
+
+
+describe("Aborted tests", () => {
+	before(() => {throw new Error("Nah, not really")});
+	
+	it("won't reach this", () => true.should.not.be.false);
+	it.skip("won't reach this either", () => true.should.be.true);
+});

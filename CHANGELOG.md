@@ -4,6 +4,12 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* **Fixed:** Misleading summary when aborting tests with `bail` disabled
+
+
+
 [v2.0.1]
 ------------------------------------------------------------------------
 **January 19th, 2017**  
