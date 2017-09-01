@@ -4,10 +4,10 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
-[Unpublished]
+[v2.0.2]
 ------------------------------------------------------------------------
 * **Fixed:** Misleading summary when aborting tests with `bail` disabled
-
+* **Fixed:** Spec-runner breakage in recent Atom versions
 
 
 [v2.0.1]
@@ -71,7 +71,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v2.0.1...HEAD
+[Unpublished]: ../../compare/v2.0.2...HEAD
+[v2.0.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.2
 [v2.0.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.1
 [v2.0.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.0
 [v1.1.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.1.1
