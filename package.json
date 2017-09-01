@@ -16,7 +16,7 @@
 		"get-options": ">=1.1.0",
 		"print": "*",
 		"mocha": "*",
-		"chai": "*",
+		"chai": ">=4.1.2",
 		"diff": "*"
 	}
 }
