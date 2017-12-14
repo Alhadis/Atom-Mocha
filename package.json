@@ -7,11 +7,13 @@
 	"license": "ISC",
 	"main": "./index.js",
 	"atomTestRunner": "./index.js",
-	"scripts": {"install": "node ./bin/post-install.js"},
+	"scripts": {
+		"install": "node ./bin/post-install.js"
+	},
 	"engines": {
 		"atom": ">1.6.0"
 	},
-	"files": ["bin", "lib"],
+	"files": ["bin", "lib", "index.js"],
 	"dependencies": {
 		"get-options": ">=1.1.0",
 		"print": "*",
