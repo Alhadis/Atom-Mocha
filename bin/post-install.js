@@ -34,19 +34,12 @@ read(file)
 			const pattern = new RegExp(`([\\n{,])([ \\t]*)"(${beforeKey})"([ \\t]*)(:[ \\t]*)?`);
 			const match = data.match(pattern);
 			if(match){
-				// NB: APM embeds an outdated version of Node that lacks destructuring support
-				const line        = match[0];
-				const start       = match[1];
-				const indent      = match[2];
-				const matchedKey  = match[3];
-				const beforeColon = match[4];
-				const beforeValue = match[5];
-				
+				let [line, start, indent, matchedKey, beforeColon, beforeValue] = match;
 				const insert = `${start + indent}"${key}"`
 					+ beforeColon + (beforeValue || ": ")
 					+ `"${value}"`
 					+ ("," !== start ? "," : "");
-				const index  = match.index;
+				const {index} = match;
 				const before = data.substring(0, index);
 				const after  = data.substring(index);
 				return [before + insert + after];
@@ -61,8 +54,7 @@ read(file)
 	.catch(error => die(`Could not parse ${file}`, error))
 	.then(result => {
 		if(false === result) return;
-		const data    = result[0];
-		const message = result[1] || `Added "${key}" field to ${file}.`;
+		const [data, message = `Added "${key}" field to ${file}.`] = result;
 		
 		// Make sure invalid data doesn't get written.
 		if(value !== JSON.parse(data)[key])
@@ -83,24 +75,16 @@ read(file)
  * @param {Number} [exitCode=1] - Error code to exit with.
  * @private
  */
-function die(reason, error, exitCode){
-	error    = error    || null;
-	exitCode = exitCode || 0;
-	
+function die(reason = "", error = null, exitCode = 0){
 	reason = (reason || "").trim();
 	
 	// ANSI escape sequences (disabled if output is redirected)
-	let reset       = "\x1B[0m";
-	let bold        = "\x1B[1m";
-	let underline   = "\x1B[4m";
-	let noBold      = "\x1B[22m";
-	let noUnderline = "\x1B[24m";
-	let red         = "\x1B[31;9;38m";
-	if(!process.stderr.isTTY)
-		reset=bold=underline=noBold=noUnderline=red = "";
+	const [reset, bold, underline, noBold, noUnderline, red] = process.stderr.isTTY
+		? [0, 1, 4, 22, 24, [31,9,38]].map(s => `\x1B[${ Array.isArray(s) ? s.join(";") : s}m`)
+		: Array.of("", 40);
 	
 	if(error){
-		const inspect = require("util").inspect;
+		const {inspect} = require("util");
 		process.stderr.write(red + inspect(error) + reset + "\n\n");
 	}
 	
@@ -170,4 +154,16 @@ function write(filePath, fileData, options){
 				: resolve(fileData);
 		});
 	});
+}
+
+
+
+// Idiotic debugging function. Ignore.
+function showInjection(...args){
+	const [before, injected, after] = args.map(s => s.replace(/\n/g, "¬\n"));
+	const BG = "\x1B[48;5;"
+	process.stdout.write(`${BG}9m` + before + "\x1B[0m");
+	process.stdout.write(injected);
+	process.stdout.write(`${BG}10m` + after + "\x1B[0m");
+	process.exit();	
 }
