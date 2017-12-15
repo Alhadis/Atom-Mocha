@@ -4,8 +4,15 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[v2.0.3]
+------------------------------------------------------------------------
+**December 15th, 2017**  
+* **Fixed:** Entry-point file (`index.js`) missing from packaged tarball
+
+
 [v2.0.2]
 ------------------------------------------------------------------------
+**September 1st, 2017**  
 * **Fixed:** Misleading summary when aborting tests with `bail` disabled
 * **Fixed:** Spec-runner breakage in recent Atom versions
 
@@ -71,7 +78,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v2.0.2...HEAD
+[Unpublished]: ../../compare/v2.0.3...HEAD
+[v2.0.3]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.3
 [v2.0.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.2
 [v2.0.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.1
 [v2.0.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.0
