@@ -4,6 +4,12 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[v2.0.4]
+------------------------------------------------------------------------
+**February 11th, 2018**  
+* **Added:** Global reference to `mocha` and runner instances [[`#4`][]]
+
+
 [v2.0.3]
 ------------------------------------------------------------------------
 **December 15th, 2017**  
@@ -78,7 +84,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v2.0.3...HEAD
+[Unpublished]: ../../compare/v2.0.4...HEAD
+[v2.0.4]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.4
 [v2.0.3]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.3
 [v2.0.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.2
 [v2.0.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.1
@@ -88,3 +95,4 @@ Initial release.
 [v1.0.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.0.2
 [v1.0.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.0.1
 [v1.0.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v1.0.0
+[`#4`]: https://github.com/Alhadis/Atom-Mocha/pull/4
