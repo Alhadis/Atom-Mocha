@@ -4,6 +4,12 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[v2.0.5]
+------------------------------------------------------------------------
+**March 22nd, 2018**  
+* **Fixed:** Breakage when running on Atom v1.25+
+
+
 [v2.0.4]
 ------------------------------------------------------------------------
 **February 11th, 2018**  
@@ -84,7 +90,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v2.0.4...HEAD
+[Unpublished]: ../../compare/v2.0.5...HEAD
+[v2.0.5]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.5
 [v2.0.4]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.4
 [v2.0.3]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.3
 [v2.0.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.2
