@@ -34,7 +34,7 @@ read(file)
 			const pattern = new RegExp(`([\\n{,])([ \\t]*)"(${beforeKey})"([ \\t]*)(:[ \\t]*)?`);
 			const match = data.match(pattern);
 			if(match){
-				let [line, start, indent, matchedKey, beforeColon, beforeValue] = match;
+				let [, start, indent,, beforeColon, beforeValue] = match;
 				const insert = `${start + indent}"${key}"`
 					+ beforeColon + (beforeValue || ": ")
 					+ `"${value}"`
@@ -79,7 +79,7 @@ function die(reason = "", error = null, exitCode = 0){
 	reason = (reason || "").trim();
 	
 	// ANSI escape sequences (disabled if output is redirected)
-	const [reset, bold, underline, noBold, noUnderline, red] = process.stderr.isTTY
+	const [reset,, underline,, noUnderline, red] = process.stderr.isTTY
 		? [0, 1, 4, 22, 24, [31,9,38]].map(s => `\x1B[${ Array.isArray(s) ? s.join(";") : s}m`)
 		: Array.of("", 40);
 	
@@ -154,16 +154,4 @@ function write(filePath, fileData, options){
 				: resolve(fileData);
 		});
 	});
-}
-
-
-
-// Idiotic debugging function. Ignore.
-function showInjection(...args){
-	const [before, injected, after] = args.map(s => s.replace(/\n/g, "¬\n"));
-	const BG = "\x1B[48;5;"
-	process.stdout.write(`${BG}9m` + before + "\x1B[0m");
-	process.stdout.write(injected);
-	process.stdout.write(`${BG}10m` + after + "\x1B[0m");
-	process.exit();	
 }
