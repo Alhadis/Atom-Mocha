@@ -4,6 +4,11 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* **Changed:** `attachToDOM` and `resetDOM` now work in headless tests
+
+
 [v2.0.5]
 ------------------------------------------------------------------------
 **March 22nd, 2018**  

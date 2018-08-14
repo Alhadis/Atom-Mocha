@@ -97,7 +97,7 @@ describe("Chai extensions", () => {
 	
 	when("it thinks of a good idea", () =>
 		it("quickly implements it before it forgets", () => {
-			global.when.should.be.a.function;
+			global.when.should.be.a("function");
 		}));
 });
 

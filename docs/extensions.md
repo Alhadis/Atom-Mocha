@@ -105,7 +105,7 @@ document.activeElement.should.have.focus;
 
 
 ### attachToDOM
-Attaches an HTML element to the spec-runner window. Does nothing if running headlessly.
+Attaches an HTML element to the spec-runner window.
 
 ```js
 const workspace = atom.views.getView(atom.workspace);
@@ -118,8 +118,6 @@ Fulfils the same duty as Atom's `jasmine.attachToDOM` extension.
 
 ### resetDOM
 Removes unrecognised DOM elements from the spec-runner's `body` element. Complements [`attachToDOM`](#attachtodom).
-
-Does nothing if running headlessly.
 
 ```js
 afterEach(() => resetDOM());
