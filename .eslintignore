@@ -1,0 +1,2 @@
+# Ignore "specs", they're SUPPOSED to generate errors
+/spec/*
