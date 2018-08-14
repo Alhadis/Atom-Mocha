@@ -4,8 +4,9 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
-[Unpublished]
+[v2.0.6]
 ------------------------------------------------------------------------
+**August 15th, 2018**  
 * **Changed:** `attachToDOM` and `resetDOM` now work in headless tests
 
 
@@ -95,7 +96,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v2.0.5...HEAD
+[Unpublished]: ../../compare/v2.0.6...HEAD
+[v2.0.6]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.6
 [v2.0.5]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.5
 [v2.0.4]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.4
 [v2.0.3]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.3
