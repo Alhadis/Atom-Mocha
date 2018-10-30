@@ -1,6 +1,6 @@
 {
 	"name": "atom-mocha",
-	"version": "v2.0.6",
+	"version": "v2.0.7",
 	"description": "Run Atom specs using bleeding-edge Mocha and Chai.",
 	"repository": "https://github.com/Alhadis/Atom-Mocha",
 	"author": "John Gardner <gardnerjohng@gmail.com>",

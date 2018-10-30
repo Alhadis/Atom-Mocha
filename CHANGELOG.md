@@ -4,6 +4,12 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[v2.0.7]
+------------------------------------------------------------------------
+**October 31st, 2018**  
+* **Fixed:** Interactive reporter freezing instead of displaying output
+
+
 [v2.0.6]
 ------------------------------------------------------------------------
 **August 15th, 2018**  
@@ -96,7 +102,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v2.0.6...HEAD
+[Unpublished]: ../../compare/v2.0.7...HEAD
+[v2.0.7]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.7
 [v2.0.6]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.6
 [v2.0.5]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.5
 [v2.0.4]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.4
