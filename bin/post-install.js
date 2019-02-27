@@ -26,7 +26,7 @@ read(file)
 		const pattern = new RegExp(`("${key}"\\s*:\\s*)(?:null|"(?:[^\\\\"]|\\.)*")`);
 		if(pattern.test(data)) return [
 			data.replace(pattern, `$1"${value}"`),
-			`Updated "${key}" field in ${file}.`
+			`Updated "${key}" field in ${file}.`,
 		];
 		
 		// Insert new field in a relevant-looking spot, retaining formatting style if possible
@@ -34,7 +34,7 @@ read(file)
 			const pattern = new RegExp(`([\\n{,])([ \\t]*)"(${beforeKey})"([ \\t]*)(:[ \\t]*)?`);
 			const match = data.match(pattern);
 			if(match){
-				let [, start, indent,, beforeColon, beforeValue] = match;
+				const [, start, indent,, beforeColon, beforeValue] = match;
 				const insert = `${start + indent}"${key}"`
 					+ beforeColon + (beforeValue || ": ")
 					+ `"${value}"`
@@ -80,7 +80,7 @@ function die(reason = "", error = null, exitCode = 0){
 	
 	// ANSI escape sequences (disabled if output is redirected)
 	const [reset,, underline,, noUnderline, red] = process.stderr.isTTY
-		? [0, 1, 4, 22, 24, [31,9,38]].map(s => `\x1B[${ Array.isArray(s) ? s.join(";") : s}m`)
+		? [0, 1, 4, 22, 24, [31, 9, 38]].map(s => `\x1B[${ Array.isArray(s) ? s.join(";") : s}m`)
 		: Array.of("", 40);
 	
 	if(error){

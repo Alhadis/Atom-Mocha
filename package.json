@@ -21,6 +21,13 @@
 		"print": "^1.1.0"
 	},
 	"devDependencies": {
+		"@alhadis/eslint-config": "^1.2.0",
 		"eslint": "^5.14.1"
+	},
+	"eslintConfig": {
+		"extends": "@alhadis/eslint-config/atom",
+		"rules": {
+			"no-underscore-dangle": 0
+		}
 	}
 }
