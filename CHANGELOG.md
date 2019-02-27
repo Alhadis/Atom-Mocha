@@ -4,6 +4,12 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* **Added:** Support for `.mocharc.*` files introduced in Mocha v6.0
+* **Fixed:** Inability to globalise Chai methods using `chai/register-*`
+
+
 [v2.0.7]
 ------------------------------------------------------------------------
 **October 31st, 2018**  

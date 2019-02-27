@@ -17,7 +17,6 @@
 	"dependencies": {
 		"chai": "^4.2.0",
 		"diff": "^4.0.1",
-		"get-options": "^1.2.0",
 		"mocha": "^6.0.2",
 		"print": "^1.1.0"
 	},
