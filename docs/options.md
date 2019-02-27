@@ -57,7 +57,6 @@ For example:
 "atom-mocha": {
 	"mocha": {
 		"bail": true,
-		"enableTimeouts": true,
 		"grep": "/(^tokenises|strings)\\b/i",
 		"reporter": "landing",
 		"retries": 1
