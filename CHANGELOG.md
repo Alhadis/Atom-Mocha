@@ -8,6 +8,11 @@ This project honours [Semantic Versioning](http://semver.org/).
 ------------------------------------------------------------------------
 * **Added:** Support for `.mocharc.*` files introduced in Mocha v6.0
 * **Fixed:** Inability to globalise Chai methods using `chai/register-*`
+* **Fixed:** Hotlinked stacks now use [Atom's core URI handlers][1] for
+  jumping to offending lines of code during failed tests. This enabled
+  removal of a lot of ugly kruft written prior to the URI handler feature
+
+[1]: https://github.com/BinaryMuse/atom-mocha-test-runner/pull/12
 
 
 [v2.0.7]
