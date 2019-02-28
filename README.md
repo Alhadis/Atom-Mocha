@@ -21,11 +21,12 @@ If you're still experiencing difficulties, [please file an issue](https://github
 
 Configuration
 -------------
-To pass options to Mocha, place a [`mocha.opts`](https://mochajs.org/#mochaopts) file in your package's specs directory.
-Alternatively, you can use `package.json` instead:
+To pass options to Mocha, place a [`.mocharc.{js,json,yml}`](https://mochajs.org/#configuring-mocha-nodejs) file in your package's base directory.
+(or in your specs folder, whichever you prefer).
+Alternatively, you can use `package.json`'s `"mocha":` property instead:
 
 ~~~json
-"atom-mocha": {
+{
 	"mocha": {
 		"bail": true,
 		"ui": "bdd"
