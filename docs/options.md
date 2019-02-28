@@ -1,8 +1,15 @@
 Option reference
 ================
 
-Options may be specified in `package.json` or `mocha.opts`.
-If duplicated, the latter takes precedence over the former.
+Options are sourced from the following locations, in descending order of priority:
+
+1. Command-line arguments
+2. `.mocharc.js`
+3. `mocharc.ya?ml`
+4. `mocharc.json`
+5. `package.json` (`mocha` property of top-level object)
+6. `mocha.opts`
+
 
 * [headless](#headless) / [interactive](#interactive)
 * [mocha](#mocha)
@@ -48,19 +55,28 @@ Anything that's valid for `atom-mocha` is also valid for `headless` or `interact
 
 
 
-### mocha
-__package.json only__  
+### mocha <small>(`package.json` only)</small>
+:warning: <u>**DEPRECATION WARNING:**</u>:warning:
+
+> [Mocha v6](https://github.com/mochajs/mocha/pull/3556) introduced support for `package.json`
+> hosted configuration, but reads properties from the `"mocha"` key of the top-level JSON object.
+> Having options for Mocha pulled from `"atom‑mocha": "mocha"` is now confusing and redundant,
+> and we **strongly** recommend moving any Mocha settings you had to the `mocha` property of
+> your `package.json` file.
+>
+> This and many more changes are due to be made to the package's configuration in the next
+> major release. See [`Alhadis/Atom-Mocha#3`](https://github.com/Alhadis/Atom-Mocha/issues/3)
+> for discussion and details.
+
 An object containing [Mocha configuration](https://mochajs.org/#usage) settings.
 For example:
 
 ~~~json
-"atom-mocha": {
-	"mocha": {
-		"bail": true,
-		"grep": "/(^tokenises|strings)\\b/i",
-		"reporter": "landing",
-		"retries": 1
-	}
+"mocha": {
+	"bail": true,
+	"grep": "/(^tokenises|strings)\\b/i",
+	"reporter": "landing",
+	"retries": 1
 }
 ~~~
 

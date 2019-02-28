@@ -20,16 +20,16 @@ describe("This package", function(){
 	it("should fail", function(){
 		const A = {
 			alpha: "A",
-			bravo: "B",
+			beta:  "B",
+			gamma: "E",
 			delta: "D",
-			epsilon: "E"
 		};
 		
 		const B = {
 			Alpha: "A",
-			bravo: "B",
+			beta:  "B",
+			gamma: "E",
 			delta: "d",
-			epsilon: "E"
 		};
 		
 		A.should.equal(B);
@@ -38,7 +38,7 @@ describe("This package", function(){
 	describe("Suite nesting", function(){
 		
 		it("does something useful eventually", function(done){
-			setTimeout(_ => done(), 40);
+			setTimeout(() => done(), 40);
 		});
 	});
 });
