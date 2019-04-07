@@ -4,8 +4,9 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
-[Unpublished]
+[v2.1.1]
 ------------------------------------------------------------------------
+**April 8th, 2019**  
 * **Added:** Support for `.jsonc` as a `.mocharc.*` extension
 * Upgraded to [Mocha v6.1.0][]
 
@@ -123,7 +124,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v2.1.0...HEAD
+[Unpublished]: ../../compare/v2.1.1...HEAD
+[v2.1.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.1.1
 [v2.1.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.1.0
 [v2.0.7]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.7
 [v2.0.6]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.6
