@@ -17,12 +17,12 @@
 	"dependencies": {
 		"chai": "^4.2.0",
 		"diff": "^4.0.1",
-		"mocha": "^6.0.2",
+		"mocha": "^6.1.0",
 		"print": "^1.1.0"
 	},
 	"devDependencies": {
 		"@alhadis/eslint-config": "^1.2.0",
-		"eslint": "^5.14.1"
+		"eslint": "^5.16.0"
 	},
 	"eslintConfig": {
 		"extends": "@alhadis/eslint-config/atom",
