@@ -4,6 +4,14 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* **Added:** Support for `.jsonc` as a `.mocharc.*` extension
+* Upgraded to [Mocha v6.1.0][]
+
+[Mocha v6.1.0]: https://github.com/mochajs/mocha/releases/tag/v6.1.0
+
+
 [v2.1.0]
 ------------------------------------------------------------------------
 **March 1st, 2019**  
