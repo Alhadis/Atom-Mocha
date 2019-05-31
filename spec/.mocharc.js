@@ -1,5 +1,7 @@
 "use strict";
 
+console.log(atom, AtomMocha);
+
 module.exports = {
 	autoIt: true,
 	reporter: "atom",
