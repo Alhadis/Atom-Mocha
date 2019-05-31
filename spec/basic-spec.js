@@ -40,6 +40,36 @@ describe("This package", function(){
 		it("does something useful eventually", function(done){
 			setTimeout(() => done(), 40);
 		});
+		
+		it("cleans anonymous async functions", async function(){
+			if(true){
+				true.should.be.true;
+			}
+		});
+		
+		it("cleans anonymous generators", function * (){
+			if(true){
+				true.should.be.true;
+			}
+		});
+		
+		it("cleans named async functions", async function foo() {
+			if(true){
+				true.should.be.true;
+			}
+		});
+		
+		it("cleans named generators", function * foo (){
+			if(true){
+				true.should.be.true;
+			}
+		});
+		
+		it("cleans async arrow functions", async () => {
+			if(true){
+				true.should.be.true;
+			}
+		});
 	});
 });
 

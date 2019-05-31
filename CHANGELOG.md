@@ -4,6 +4,11 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* **Fixed:** Async functions not reformatted in code-blocks
+
+
 [v2.1.1]
 ------------------------------------------------------------------------
 **April 8th, 2019**  
