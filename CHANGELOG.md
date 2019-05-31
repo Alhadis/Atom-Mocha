@@ -4,7 +4,7 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
-[Unpublished]
+[v2.1.2]
 ------------------------------------------------------------------------
 * **Added:** Access to `atom` and `AtomMocha` globals in `.mocharc.js`
 * **Added:** `AtomMocha.isCI` property for identifying CI environments
@@ -131,7 +131,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v2.1.1...HEAD
+[Unpublished]: ../../compare/v2.1.2...HEAD
+[v2.1.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.1.2
 [v2.1.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.1.1
 [v2.1.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.1.0
 [v2.0.7]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.0.7
