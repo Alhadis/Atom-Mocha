@@ -6,6 +6,8 @@ This project honours [Semantic Versioning](http://semver.org/).
 
 [Unpublished]
 ------------------------------------------------------------------------
+* **Added:** Access to `atom` and `AtomMocha` globals in `.mocharc.js`
+* **Added:** `AtomMocha.isCI` property for identifying CI environments
 * **Fixed:** Async functions not reformatted in code-blocks
 
 

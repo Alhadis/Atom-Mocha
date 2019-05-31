@@ -1,6 +1,7 @@
 "use strict";
 
-console.log(atom, AtomMocha);
+if(!AtomMocha.headless && !AtomMocha.isCI)
+	console.log(atom, AtomMocha);
 
 module.exports = {
 	autoIt: true,
