@@ -4,6 +4,11 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* **Fixed:** HTML not escaped in error titles
+
+
 [v2.1.2]
 ------------------------------------------------------------------------
 * **Added:** Access to `atom` and `AtomMocha` globals in `.mocharc.js`
