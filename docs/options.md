@@ -5,10 +5,11 @@ Options are sourced from the following locations, in descending order of priorit
 
 1. Command-line arguments
 2. `.mocharc.js`
-3. `mocharc.ya?ml`
-4. `mocharc.json`
-5. `package.json` (`mocha` property of top-level object)
-6. `mocha.opts`
+3. `.mocharc.ya?ml`
+4. `.mocharc.json`
+5. `.mocharc.jsonc`
+6. `package.json` (`mocha` property of top-level object)
+7. `mocha.opts`
 
 
 * [headless](#headless) / [interactive](#interactive)

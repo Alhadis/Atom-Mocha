@@ -6,7 +6,15 @@ This project honours [Semantic Versioning](http://semver.org/).
 
 [Unpublished]
 ------------------------------------------------------------------------
+* **Added:** [`.buffer`](docs/extensions.md#buffer) assertion
+* **Added:** [`.editor`](docs/extensions.md#editor) assertion
+* **Changed:** [`TextEditor`][] objects now stringify to `<TextEditor…>`
+* **Changed:** `.focus` assertion now works for [`TextEditor`][] objects
+* **Added:** Support for Chai's [`.any`][] flag in `.classes` assertions
 * **Fixed:** HTML not escaped in error titles
+
+[`TextEditor`]: https://atom.io/docs/api/v1.38.2/TextEditor
+[`.any`]: https://www.chaijs.com/api/bdd/#method_any
 
 
 [v2.1.2]

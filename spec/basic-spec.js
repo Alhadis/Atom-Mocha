@@ -91,47 +91,6 @@ describe("Second suite at top-level", function(){
 });
 
 
-describe("Chai extensions", () => {
-	
-	afterEach(() => resetDOM());
-	
-	it("tests the existOnDisk property", () => {
-		expect(__filename).to.existOnDisk;
-	});
-	
-	it("asserts pathname equality", () => {
-		expect("/foo/bar//baz/asdf/quux/..").to.equalPath("/foo/bar/baz/asdf");
-	});
-	
-	it("tests user focus", () => {
-		const el = document.createElement("input");
-		el.autofocus = true;
-		attachToDOM(el);
-		expect(el).to.have.focus
-		expect(document.createElement("div")).not.to.have.focus
-	});
-
-	it("tests element visibility", () => {
-		const el = document.createElement("div");
-		expect(el).to.not.be.drawn;
-		el.style.visibility = "hidden";
-		document.body.appendChild(el);
-		expect(el).to.be.drawn;
-		el.style.visibility = "hidden";
-		expect(el).to.be.drawn;
-	});
-	
-	it("resets the DOM", () => {
-		expect(document.body.childElementCount).to.equal(1);
-	});
-	
-	when("it thinks of a good idea", () =>
-		it("quickly implements it before it forgets", () => {
-			global.when.should.be.a("function");
-		}));
-});
-
-
 describe("Aborted tests", () => {
 	before(() => {throw new Error("Nah, not really")});
 	

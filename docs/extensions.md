@@ -3,15 +3,17 @@ Extensions
 
 Atom-Mocha includes a few extras to help with writing specs:
 
-* [.class](#class)
-* [.drawn](#drawn)
-* [.equalPath](#equalpath)
-* [.existOnDisk](#existondisk)
-* [.focus](#focus)
-* [attachToDOM](#attachtodom)
-* [resetDOM](#resetdom)
-* [unlessOnWindows](#unlessonwindows)
-* [when](#when)
+* [`.buffer`](#buffer)
+* [`.class`](#class)
+* [`.drawn`](#drawn)
+* [`.editor`](#editor)
+* [`.equalPath`](#equalpath)
+* [`.existOnDisk`](#existondisk)
+* [`.focus`](#focus)
+* [`attachToDOM()`](#attachtodom)
+* [`resetDOM()`](#resetdom)
+* [`unlessOnWindows()`](#unlessonwindows)
+* [`when()`](#when)
 
 These are always available unless [`noExtensions`](options.md#noextensions) is set.
 
@@ -24,8 +26,18 @@ global.expect = Chai.expect;
 ```
 
 
-### .class
-Asserts that an HTML element's `classList` contains one or more CSS classes.
+### `.buffer`
+Asserts that subject is a [`TextBuffer`][] instance. See also: [`.editor`](#editor).
+
+```js
+const editor = atom.workspace.getActiveTextEditor();
+expect(editor.getBuffer()).to.be.a.buffer;
+expect(editor).not.to.be.a.buffer;
+```
+
+
+### `class`
+Asserts that an HTML element's [`classList`][] contains one or more CSS classes.
 
 ```js
 expect(div).to.have.class("error-msg");
@@ -42,7 +54,7 @@ Both `class` and `classes` are equivalent invocations; the pluralised form exist
 
 
 
-### .drawn
+### `.drawn`
 Assert that an HTML element is being rendered in the DOM tree.
 
 ```js
@@ -73,7 +85,17 @@ expect(document.querySelector("#hidden-block")).to.be.drawn;
 ```
 
 
-### .equalPath
+### `.editor`
+Asserts that subject is a [`TextEditor`][] object. See also [`.buffer`](#buffer).
+
+```js
+const editor = atom.workspace.getActiveTextEditor();
+expect(editor).to.be.an.editor;
+expect(editor.buffer).not.to.be.an.editor;
+```
+
+
+### `.equalPath`
 Asserts that two filesystem paths are equal.
 
 ```js
@@ -82,7 +104,7 @@ expect("/foo/bar/..").to.equalPath("/foo");
 
 
 
-### .existOnDisk
+### `.existOnDisk`
 Asserts that a given string matches an existing file or directory:
 
 ```js
@@ -94,7 +116,7 @@ expect(__filename).to.existOnDisk;
 
 
 
-### .focus
+### `.focus`
 Assert that an HTML element has user focus, or contains an element which does.
 
 ```js
@@ -103,9 +125,31 @@ expect(New("div")).not.to.have.focus;
 document.activeElement.should.have.focus;
 ```
 
+__Added in v2.1.2:__ `.focus` now works on [`TextEditor`][] objects, asserting that the editor is currently "active" in the user's workspace:
 
-### attachToDOM
-Attaches an HTML element to the spec-runner window.
+```js
+const editor = atom.workspace.getActiveTextEditor();
+expect(editor).to.have.focus;         // true
+expect(editor.element).to.have.focus; // false
+```
+
+Additionally, the assertion also works on "component-like" objects.
+That is, an object which doesn't inherit from [`HTMLElement`][], but contains an `.element` property that does.
+
+For example, the [`tree-view`][] package creates a singleton `TreeView` which references the physical DOM element in its `.element` property:
+
+```js
+const {treeView} = atom.packages.getActivePackage("tree-view").mainModule;
+expect(treeView).not.to.be.instanceOf(HTMLElement);
+expect(treeView.element).to.be.instanceOf(HTMLElement);
+await atom.commands.dispatch("atom-workspace", "tree-view:focus");
+expect(treeView).to.have.focus; // true
+```
+
+
+
+### `attachToDOM()`
+Attach an HTML element to the spec-runner window.
 
 ```js
 const workspace = atom.views.getView(atom.workspace);
@@ -116,8 +160,8 @@ Fulfils the same duty as Atom's `jasmine.attachToDOM` extension.
 
 
 
-### resetDOM
-Removes unrecognised DOM elements from the spec-runner's `body` element. Complements [`attachToDOM`](#attachtodom).
+### `resetDOM()`
+Remove unrecognised DOM elements from the spec-runner's `body` element. Complements [`attachToDOM()`](#attachtodom).
 
 ```js
 afterEach(() => resetDOM());
@@ -130,12 +174,12 @@ This wipes any element that isn't `body > #mocha`. Avoid using this function if:
 
 
 
-### unlessOnWindows
+### `unlessOnWindows()`
 Predicate to skip POSIX-only tests. Mocha's `.skip` function flags a test
 as `pending`, implying temporary omission. For tests which are impossible
 to run on Windows, this feedback is rarely warranted or desired.
 
-`unlessOnWindows` allows tests to be silently skipped if run on Windows.
+`unlessOnWindows()` allows tests to be silently skipped if run on Windows.
 No feedback is emitted, and no tests are marked pending. The whole block
 becomes invisible to the spec-runner:
 
@@ -155,7 +199,7 @@ unlessOnWindows(function(){
 
 
 
-### when
+### `when()`
 Call Mocha's `describe()` with `"When "` prepended to its description:
 
 ~~~js
@@ -169,3 +213,12 @@ Complements the [`autoIt`][] setting, and helps specs read more naturally.
 Only globalised if `when` doesn't already exist on the `global` object.
 
 [`autoIt`]: options.md#autoit
+
+
+
+<!-- Referenced links -->
+[`TextBuffer`]:  https://atom.io/docs/api/v1.38.2/TextBuffer
+[`TextEditor`]:  https://atom.io/docs/api/v1.38.2/TextEditor
+[`tree-view`]:   https://github.com/atom/tree-view
+[`HTMLElement`]: https://mdn.io/HTMLElement
+[`classList`]:   https://mdn.io/Element.classList

@@ -1,2 +1,2 @@
-# Ignore "specs", they're SUPPOSED to generate errors
-/spec/*
+# Ignore specs intended to generate errors
+/spec/basic-spec.js
