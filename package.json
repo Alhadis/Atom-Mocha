@@ -26,8 +26,16 @@
 	},
 	"eslintConfig": {
 		"extends": "@alhadis/eslint-config/atom",
+		"globals": {
+			"AtomMocha": true,
+			"resetDOM": true
+		},
 		"rules": {
 			"no-underscore-dangle": 0
-		}
+		},
+		"overrides": [{
+			"files": ["lib/utils.js"],
+			"rules": {"func-style": 0}
+		}]
 	}
 }
