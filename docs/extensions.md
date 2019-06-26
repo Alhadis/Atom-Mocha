@@ -125,7 +125,7 @@ expect(New("div")).not.to.have.focus;
 document.activeElement.should.have.focus;
 ```
 
-__Added in v2.1.2:__ `.focus` now works on [`TextEditor`][] objects, asserting that the editor is currently "active" in the user's workspace:
+__Added in v2.2.0:__ `.focus` now works on [`TextEditor`][] objects, asserting that the editor is currently "active" in the user's workspace:
 
 ```js
 const editor = atom.workspace.getActiveTextEditor();
