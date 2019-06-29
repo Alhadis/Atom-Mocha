@@ -15,6 +15,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 * **Changed:** `.focus` assertion now works for [`TextEditor`][] objects
 * **Changed:** `link()` removed from [`./lib/utils`][] and made internal
 * **Fixed:** Code-blocks missing if `beforeStart` was defined in config
+* **Fixed:** `document.title` property throwing error when reconfigured
 * **Fixed:** Process hanging if `beforeFinish` handler throws an error
 * **Fixed:** HTML not escaped in error titles
 
