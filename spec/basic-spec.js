@@ -13,6 +13,7 @@ describe("This package", function(){
 	
 	it("should not fail", function(){
 		NaN.should.not.equal(NaN); // NaH
+		global.foo = "Foo";
 	});
 	
 	it("might be written later"); // Nah

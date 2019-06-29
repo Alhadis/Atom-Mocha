@@ -9,6 +9,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 * **Added:** [`.buffer`](docs/extensions.md#buffer) assertion
 * **Added:** [`.editor`](docs/extensions.md#editor) assertion
 * **Added:** Feedback for errors caught whilst executing `before*` hooks
+* **Added:** Support for Mocha's [`--recursive`][] option
 * **Added:** Support for Chai's [`.any`][] flag in `.classes` assertions
 * **Changed:** Default [`specPattern`][] now recognises TypeScript files
 * **Changed:** [`TextEditor`][] objects now stringify to `<TextEditor…>`
@@ -20,6 +21,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 * **Fixed:** HTML not escaped in error titles
 
 [`./lib/utils`]: ./lib/utils.js
+[`--recursive`]: https://mochajs.org/#-recursive
 [`specPattern`]: ./docs/options.md#specpattern
 [`TextEditor`]: https://atom.io/docs/api/v1.38.2/TextEditor
 [`.any`]: https://www.chaijs.com/api/bdd/#method_any
