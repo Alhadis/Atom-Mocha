@@ -275,7 +275,8 @@ html, body{
 						#mocha .diff-details > ins::before{ content: "+" }
 	
 	
-	#mocha .suite .suite{
+	#mocha .suite .suite,
+	#mocha .error-message{
 		margin-top: 1em;
 	}
 		

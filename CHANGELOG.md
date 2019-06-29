@@ -8,11 +8,14 @@ This project honours [Semantic Versioning](http://semver.org/).
 ------------------------------------------------------------------------
 * **Added:** [`.buffer`](docs/extensions.md#buffer) assertion
 * **Added:** [`.editor`](docs/extensions.md#editor) assertion
+* **Added:** Feedback for errors caught whilst executing `before*` hooks
 * **Added:** Support for Chai's [`.any`][] flag in `.classes` assertions
 * **Changed:** Default [`specPattern`][] now recognises TypeScript files
 * **Changed:** [`TextEditor`][] objects now stringify to `<TextEditor…>`
 * **Changed:** `.focus` assertion now works for [`TextEditor`][] objects
 * **Changed:** `link()` removed from [`./lib/utils`][] and made internal
+* **Fixed:** Code-blocks missing if `beforeStart` was defined in config
+* **Fixed:** Process hanging if `beforeFinish` handler throws an error
 * **Fixed:** HTML not escaped in error titles
 
 [`./lib/utils`]: ./lib/utils.js
