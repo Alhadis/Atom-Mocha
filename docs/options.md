@@ -113,7 +113,7 @@ A regular expression that determines which files are loaded as specs.
 Default pattern:
 
 ~~~js
-/[-_.](?:spec|test)\.(?:coffee|js)$/i
+/[-_.](?:spec|test)\.(?:coffee|[jt]sx?)$/i
 ~~~
 
 Which matches any of the following filenames:

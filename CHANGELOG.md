@@ -9,12 +9,14 @@ This project honours [Semantic Versioning](http://semver.org/).
 * **Added:** [`.buffer`](docs/extensions.md#buffer) assertion
 * **Added:** [`.editor`](docs/extensions.md#editor) assertion
 * **Added:** Support for Chai's [`.any`][] flag in `.classes` assertions
+* **Changed:** Default [`specPattern`][] now recognises TypeScript files
 * **Changed:** [`TextEditor`][] objects now stringify to `<TextEditor…>`
 * **Changed:** `.focus` assertion now works for [`TextEditor`][] objects
 * **Changed:** `link()` removed from [`./lib/utils`][] and made internal
 * **Fixed:** HTML not escaped in error titles
 
 [`./lib/utils`]: ./lib/utils.js
+[`specPattern`]: ./docs/options.md#specpattern
 [`TextEditor`]: https://atom.io/docs/api/v1.38.2/TextEditor
 [`.any`]: https://www.chaijs.com/api/bdd/#method_any
 

@@ -22,8 +22,19 @@
 	},
 	"devDependencies": {
 		"@alhadis/eslint-config": "^1.2.0",
-		"eslint": "^5.16.0"
+		"atom-ts-transpiler": "^1.5.2",
+		"eslint": "^5.16.0",
+		"typescript": "^3.5.2"
 	},
+	"atomTranspilers": [{
+		"transpiler": "atom-ts-transpiler",
+		"glob": "spec/*.{ts,tsx}",
+		"options": {
+			"compilerOptions": {},
+			"cacheKeyFiles": [],
+			"verbose": false
+		}
+	}],
 	"eslintConfig": {
 		"extends": "@alhadis/eslint-config/atom",
 		"globals": {
