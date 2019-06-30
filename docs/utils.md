@@ -4,16 +4,22 @@ Utility functions
 These functions are used internally by `atom-mocha`, but may be useful for authors:
 
 * [`addTo()`](#addto)
+* [`deindent()`](#deindent)
 * [`escapeHTML()`](#escapehtml)
 * [`escapeRegExp()`](#escaperegexp)
 * [`findBasePath()`](#findbasepath)
 * [`flattenList()`](#flattenlist)
 * [`formatList()`](#formatlist)
 * [`getScrollbarWidth()`](#getscrollbarwidth)
+* [`jumpToFile()`](#jumptofile)
 * [`nearest()`](#nearest)
 * [`New()`](#new)
+* [`open()`](#open)
 * [`parseKeywords()`](#parsekeywords)
+* [`poll()`](#poll)
 * [`regexFromString()`](#regexfromstring)
+* [`wait()`](#wait)
+* [`waitForEvent()`](#waitforevent)
 
 Since `v2.2.0`, they can be accessed from the `.utils` property of the `AtomMocha` global:
 
@@ -57,6 +63,32 @@ This generates the following structure:
 	</h1>
 </header>
 ~~~
+
+
+
+<a name="deindent">deindent (input)</a>
+---------------------------------------
+Strip excess whitespace from a multiline string.
+
+Intended to be used with tagged template literals, but will work on any multiline string value.
+
+**Returns:** [String]
+
+**Parameters:**
+* [String] `input`
+
+
+**Examples:**
+~~~js
+const HTML = deindent;
+let output = HTML `
+	<div>
+		(Text)
+	</div>
+`;
+output == "<div>\n\t(Text)\n</div>";
+~~~
+
 
 
 <a name="escapehtml">escapeHTML (input)</a>
@@ -172,6 +204,17 @@ if(width){
 
 
 
+<a name="jumptofile">jumpToFile (path, line, column)</a>
+--------------------------------------------------------
+Open a file to a specific line and column in the user's editor (the one which launched the spec-runner).
+
+**Parameters:**
+* [String] `path`
+* [Number] `line`
+* [Number] `columns`
+
+
+
 <a name="nearest">nearest (subject, selector [, ignoreSelf])</a>
 ----------------------------------------------------------------
 Return the containing element of a node that matches the given selector.
@@ -217,6 +260,31 @@ div.style.color = "#ff0";
 
 
 
+<a name="open">open (...paths)</a>
+----------------------------------
+Open an editor for each filepath given, expressed relative to the current working directory.
+Separators in each path are automatically normalised, so `this/file.txt` is understood on Windows systems to be `this\file.txt`.
+
+Note that the function waits for each file's buffer to finish tokenising before resolving.
+If this is undesirable, use [`atom.workspace.open()`](https://atom.io/docs/api/v1.38.2/Workspace#instance-open) instead.
+
+**Returns:** [Promise] - A promise that fulfils with an array of [TextEditors][TextEditor], one for each opened file.
+
+**Parameters:**
+* [Array] `paths` - An array of pathname strings.
+
+**Example:**
+~~~js
+const editors = await open(
+	"fixtures/file-1.txt",
+	"fixtures/file-2.txt",
+	"some-other-file.html",
+);
+editors.should.have.lengthOf(3);
+editors[0].should.be.an.editor;
+~~~
+
+
 
 <a name="parsekeywords">parseKeywords (keywords)</a>
 ----------------------------------------------------
@@ -233,6 +301,25 @@ parseKeywords("top left"); // -> {top: true, left: true}
 ~~~
 
 
+
+<a name="poll">poll (fn, options)</a>
+-------------------------------------
+Keep calling a function until it returns a truthy value.
+
+**Returns:** [Promise] - Resolves once the function's return value evaluates to true.
+
+**Parameters:**
+* [Function] `fn` - Callback to keep running
+* [Object] `options` - Optional settings to control the polling behaviour:
+	* [Number] `rate` - Millisconds between polling attempts (default: `100`)
+	* [Number] `timeout` - Milliseconds to wait before timing out with an error (default: `0`)
+	* [Boolean] `negate` - Stop polling only the function returns a *falsy* value, not a truthy one.
+
+**Example:**
+~~~js
+// Fetch a JSON payload from a server until it contains a `done` property
+poll(async () => (await (await fetch(url)).json()).done);
+~~~
 
 
 <a name="regexfromstring">regexFromString (src [, flags])</a>
@@ -252,17 +339,59 @@ regexFromString("\\d+\\.\\d+$"); // ->  /\d+\.\d+$/
 ~~~
 
 
+<a name="wait">wait (delay)</a>
+-------------------------------
+Return a [Promise] which auto-resolves after a delay.
+
+**Returns:** [Promise]
+
+**Parameters:**
+* [Number] `delay` - Delay in milliseconds (default: 100)
+
+**Examples:**
+~~~js
+await wait(2500); // Wait for 2.5 seconds
+~~~
+
+
+
+<a name="waitforevent">waitForEvent (source, eventName)</a>
+-----------------------------------------------------------
+Return a [Promise] which resolves once an object has emitted an event.
+
+This is basically a promisified version of [`source.emitter.once()`](https://atom.io/docs/api/v1.38.2/Emitter#instance-once).
+See [`event-kit`](https://www.npmjs.com/package/event-kit) for more details.
+
+**Returns:** [Promise] - Resolves with whatever value the event was called with, if any.
+
+**Parameters:** 
+* [Object] source - An object with an `.emitter` property containing an undisposed [Emitter] object.
+* [String] eventName - Name of event to listen for
+
+**Examples:**
+~~~js
+module.exports = {
+	async activate(){
+		// Wait for Atom to finish loading every initial package at startup
+		await waitForEvent(atom.packages, "did-activate-initial-packages");
+	},
+};
+~~~
+
 
 
 
 [Referenced links]:_____________________________________________________________
-[Array]:     https://mdn.io/JavaScript/Reference/Global_Objects/Array
-[Boolean]:   https://mdn.io/JavaScript/Reference/Global_Objects/Boolean
-[Element]:   https://developer.mozilla.org/en-US/docs/Web/API/Element
-[Function]:  https://mdn.io/JavaScript/Reference/Global_Objects/Function
-[Node]:      https://developer.mozilla.org/en-US/docs/Web/API/Node
-[Number]:    https://mdn.io/JavaScript/Reference/Global_Objects/Number
-[Object]:    https://mdn.io/JavaScript/Reference/Global_Objects/Object
-[RegExp]:    https://mdn.io/JavaScript/Reference/Global_Objects/RegExp
-[String]:    https://mdn.io/JavaScript/Reference/Global_Objects/String
-[Symbol]:    https://mdn.io/JavaScript/Reference/Global_Objects/Symbol
+[Array]:       https://mdn.io/JavaScript/Reference/Global_Objects/Array
+[Boolean]:     https://mdn.io/JavaScript/Reference/Global_Objects/Boolean
+[Element]:     https://developer.mozilla.org/en-US/docs/Web/API/Element
+[Function]:    https://mdn.io/JavaScript/Reference/Global_Objects/Function
+[Node]:        https://developer.mozilla.org/en-US/docs/Web/API/Node
+[Number]:      https://mdn.io/JavaScript/Reference/Global_Objects/Number
+[Object]:      https://mdn.io/JavaScript/Reference/Global_Objects/Object
+[RegExp]:      https://mdn.io/JavaScript/Reference/Global_Objects/RegExp
+[String]:      https://mdn.io/JavaScript/Reference/Global_Objects/String
+[Symbol]:      https://mdn.io/JavaScript/Reference/Global_Objects/Symbol
+[Promise]:     https://mdn.io/Promise
+[TextEditor]:  https://atom.io/docs/api/v1.38.2/AtomEnvironment
+[Emitter]:     https://atom.io/docs/api/v1.38.2/Emitter
