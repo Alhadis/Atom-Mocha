@@ -36,7 +36,9 @@ html, body{
 #mocha code,
 #mocha ins,
 #mocha del,
-#mocha mark{
+#mocha mark,
+#mocha samp,
+#mocha kbd{
 	all: unset;
 }
 	/** Luminous syntax highlighting */
@@ -279,7 +281,15 @@ html, body{
 	#mocha .error-message{
 		margin-top: 1em;
 	}
-		
+	
+	#mocha samp.echo{
+		display: block;
+		margin-top: -1.15em;
+		margin-bottom: .85em;
+		user-select: none;
+	}
+
+	
 /** Stats anchored to bottom */
 #mocha-stats{
 	position: absolute;

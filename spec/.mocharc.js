@@ -22,6 +22,7 @@ module.exports = {
 	
 	// Deduce "successfully failed" tests from the total number of failures
 	beforeFinish(failures){
+		if(AtomMocha.runner._abort) return;
 		const collect = (from, into) => {
 			for(const test of from.tests){
 				into.push(test);
