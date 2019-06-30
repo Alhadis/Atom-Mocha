@@ -262,25 +262,35 @@ div.style.color = "#ff0";
 
 <a name="open">open (...paths)</a>
 ----------------------------------
-Open an editor for each filepath given, expressed relative to the current working directory.
+Open an editor for one or more filepaths.
+Non-absolute paths are resolved relative to the currently-running test file.
+
 Separators in each path are automatically normalised, so `this/file.txt` is understood on Windows systems to be `this\file.txt`.
 
-Note that the function waits for each file's buffer to finish tokenising before resolving.
-If this is undesirable, use [`atom.workspace.open()`](https://atom.io/docs/api/v1.38.2/Workspace#instance-open) instead.
-
-**Returns:** [Promise] - A promise that fulfils with an array of [TextEditors][TextEditor], one for each opened file.
+**Returns:** [Promise] - A promise that fulfils with either:
+- a single [TextEditor][] if one or no paths are specified, or
+- an [Array] of [TextEditors][TextEditor] if multiple paths were given.
 
 **Parameters:**
-* [Array] `paths` - An array of pathname strings.
+* [Array] `paths` - An array of pathname strings, relative or absolute.
 
 **Example:**
 ~~~js
+// Opening a single file
+const editor = await open("fixtures/file.txt");
+editor.should.be.an.editor;
+
+// Opening a blank editor
+const editor = await open();
+editor.getPath().should.be.undefined;
+
+// Opening multiple files
 const editors = await open(
 	"fixtures/file-1.txt",
 	"fixtures/file-2.txt",
 	"some-other-file.html",
 );
-editors.should.have.lengthOf(3);
+editors.should.be.an("array").with.lengthOf(3);
 editors[0].should.be.an.editor;
 ~~~
 

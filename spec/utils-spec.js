@@ -185,4 +185,82 @@ describe("Utility functions", () => {
 			expect(fn2).to.throw(AssertionError, "expected { cost: 55 } not to cost $55 instead of $55");
 		});
 	});
+	
+	
+	describe("open()", function(){
+		this.slow(500);
+		const {open} = AtomMocha.utils;
+		
+		beforeEach(() => {
+			for(const editor of [...atom.textEditors.editors])
+				editor.destroy();
+		});
+		
+		it("opens a single editor", async () => {
+			const editor = await open("basic-spec.js");
+			expect(editor).to.be.an.editor;
+			expect(editor.getPath()).to.existOnDisk;
+		});
+		
+		it("opens multiple editors", async () => {
+			const editors = await open("basic-spec.js", "extension-spec.js");
+			expect(editors).to.be.an("array").with.lengthOf(2);
+			expect(editors[0]).to.be.an.editor;
+			expect(editors[1]).to.be.an.editor;
+			expect(editors[0].getPath()).to.existOnDisk;
+			expect(editors[1].getPath()).to.existOnDisk;
+		});
+		
+		it("normalises separators in relative paths", async () => {
+			let paths = [
+				"filetypes/coffee-spec.coffee",
+				"filetypes/typescript-spec.ts",
+				"filetypes/react/jsx-spec.jsx",
+				"filetypes/react/tsx-spec.tsx",
+			];
+			let editors = await open(...paths);
+			expect(editors).to.be.an("array").with.lengthOf(4);
+			for(const editor of editors){
+				editor.should.be.an.editor;
+				editor.getPath().should.existOnDisk;
+			}
+			paths = paths.map(p => p.replace(/\//g, "\\"))
+			editors = await open(...paths);
+			expect(editors).to.be.an("array").with.lengthOf(4);
+			for(const editor of editors){
+				editor.should.be.an.editor;
+				editor.getPath().should.existOnDisk;
+			}
+		});
+		
+		it("normalises separators in absolute paths", async () => {
+			const editors = await open(
+				__filename.replace(/\\/g, "/"),
+				__filename.replace(/\//g, "\\")
+			);
+			expect(editors).to.be.an("array").with.lengthOf(2);
+			expect(editors[0]).to.be.an.editor;
+			expect(editors[1]).to.be.an.editor;
+			const A = editors[0].getPath();
+			const B = editors[1].getPath();
+			expect(A).to.existOnDisk;
+			expect(B).to.existOnDisk;
+			expect(A).to.equal(B);
+		});
+		
+		it("opens editors for non-existent files", async () => {
+			const editors = await open("foo.js", "bar.js");
+			expect(editors).to.be.an("array").with.lengthOf(2);
+			expect(editors[0]).to.be.an.editor;
+			expect(editors[1]).to.be.an.editor;
+			expect(editors[0].getPath()).not.to.existOnDisk;
+			expect(editors[1].getPath()).not.to.existOnDisk;
+		});
+		
+		it("returns an empty editor if no paths are specified", async () => {
+			const editor = await open();
+			expect(editor).to.be.an.editor;
+			expect(editor.getPath()).to.be.undefined;
+		});
+	});
 });
