@@ -39,26 +39,5 @@
 			"cacheKeyFiles": [],
 			"verbose": false
 		}
-	}],
-	"eslintConfig": {
-		"extends": "@alhadis/eslint-config/atom",
-		"globals": {
-			"AtomMocha": true,
-			"resetDOM": true
-		},
-		"rules": {
-			"no-underscore-dangle": 0
-		},
-		"overrides": [{
-			"files": ["lib/main.js"],
-			"rules": {
-				"brace-style": 0,
-				"indent": 0,
-				"no-unexpected-multiline": 0
-			}
-		},{
-			"files": ["lib/utils.js"],
-			"rules": {"func-style": 0}
-		}]
-	}
+	}]
 }
