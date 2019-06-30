@@ -150,7 +150,8 @@ Reporter-specific
 The following options are specific to the default reporter only; they do nothing for other reporters (such as Mocha's [HTML reporter](https://mochajs.org/#html)).
 
 ### autoIt
-Prepend `It` to the name of every test.
+__Default: Enabled__ (since [`v2.2.0`])  
+Prepend `It` to the name of every test. See [`mocha-when`][] for details.
 
 ```js
 it("runs a test", () => {});
@@ -282,3 +283,8 @@ RegExp to filter unwanted lines from stack traces.
 
 ### title
 Title of the spec-runner window. Defaults to `"Mocha"`.
+
+
+[Referenced links]:_____________________________
+[`v2.2.0`]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.2.0
+[`mocha-when`]: https://www.npmjs.com/package/mocha-when

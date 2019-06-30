@@ -11,6 +11,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 * **Added:** Feedback for errors caught whilst executing `before*` hooks
 * **Added:** Support for Mocha's [`--recursive`][] option
 * **Added:** Support for Chai's [`.any`][] flag in `.classes` assertions
+* **Changed:** [`autoIt`][] setting enabled by default for all reporters
 * **Changed:** Default [`specPattern`][] now recognises TypeScript files
 * **Changed:** [`TextEditor`][] objects now stringify to `<TextEditor…>`
 * **Changed:** `.focus` assertion now works for [`TextEditor`][] objects
@@ -21,10 +22,11 @@ This project honours [Semantic Versioning](http://semver.org/).
 * **Fixed:** HTML not escaped in error titles
 
 [`./lib/utils`]: ./lib/utils.js
-[`--recursive`]: https://mochajs.org/#-recursive
+[`autoIt`]:      ./docs/options.md#autoit
 [`specPattern`]: ./docs/options.md#specpattern
-[`TextEditor`]: https://atom.io/docs/api/v1.38.2/TextEditor
-[`.any`]: https://www.chaijs.com/api/bdd/#method_any
+[`TextEditor`]:  https://atom.io/docs/api/v1.38.2/TextEditor
+[`--recursive`]: https://mochajs.org/#-recursive
+[`.any`]:        https://www.chaijs.com/api/bdd/#method_any
 
 
 [v2.1.2]

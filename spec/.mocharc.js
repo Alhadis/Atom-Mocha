@@ -6,7 +6,6 @@ if(!AtomMocha.headless && !AtomMocha.isCI)
 const errors = new Map();
 
 module.exports = {
-	autoIt: true,
 	reporter: "atom",
 	require: "chai/should",
 	recursive: true,
@@ -33,14 +32,14 @@ module.exports = {
 		const results = collect(AtomMocha.runner.suite, []);
 		let test, error;
 		
-		test = results["This package"]["should fail"];
+		test = results["This package"]["it should fail"];
 		test.state.should.equal("failed");
 		expect(error = errors.get(test)).to.be.an.instanceOf(Chai.AssertionError);
 		expect(error).to.have.property("message").that.equals("expected { Object (alpha, beta, ...) } to equal { Object (Alpha, beta, ...) }");
 		expect(error).to.have.property("showDiff").that.equals(true);
 		--failures;
 		
-		test = results["Second suite at top-level"]["breaks something"];
+		test = results["Second suite at top-level"]["it breaks something"];
 		test.state.should.equal("failed");
 		expect(error = errors.get(test)).to.be.an.instanceOf(ReferenceError);
 		expect(error).to.have.property("message").that.equals("something is not defined");
