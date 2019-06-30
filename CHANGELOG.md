@@ -8,6 +8,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 ------------------------------------------------------------------------
 * **Added:** [`.buffer`](docs/extensions.md#buffer) assertion
 * **Added:** [`.editor`](docs/extensions.md#editor) assertion
+* **Added:** Statbar counters now filter results when clicked
 * **Added:** Feedback for errors caught whilst executing `before*` hooks
 * **Added:** Support for Mocha's [`--recursive`][] option
 * **Added:** Support for Chai's [`.any`][] flag in `.classes` assertions

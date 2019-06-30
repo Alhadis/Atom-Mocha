@@ -488,3 +488,40 @@ html, body{
 		#mocha.minimal #mocha-failures:not(.zero){
 			display: block;
 		}
+
+
+/** Result filters */
+#mocha-stats > *{
+	cursor: pointer;
+	transition: .3s ease all;
+	transition-property: opacity, border-color, color;
+}
+	#mocha-stats > .duration { pointer-events: none; }
+	#mocha[data-filter] #mocha-stats > :hover { opacity: 0.5; }
+	#mocha[data-filter] #mocha-stats > *{
+		border-color: rgba(68, 68, 68, 0.35);
+		opacity: 0.25;
+	}
+	
+	#mocha[data-filter="passes"]   #mocha-passes,
+	#mocha[data-filter="pending"]  #mocha-pending,
+	#mocha[data-filter="failures"] #mocha-failures{
+		opacity: 1 !important;
+	}
+	
+	#mocha-passes:hover   { color: #0f0;    }
+	#mocha-pending:hover  { color: #34d8ea; }
+	#mocha-failures:hover { color: #f00;    }
+
+/** Hide filtered-out elements */
+#mocha[data-filter="failures"] .suite:not(.has-failures),
+#mocha[data-filter="failures"] .suite.has-failures .test:not(.fail),
+
+#mocha[data-filter="pending"]  .error-message,
+#mocha[data-filter="pending"]  .suite:not(.has-pending),
+#mocha[data-filter="pending"]  .suite.has-pending .test:not(.pending),
+
+#mocha[data-filter="passes"]   .test:not(.pass),
+#mocha[data-filter="passes"]   .error-message{
+	display: none;
+}
