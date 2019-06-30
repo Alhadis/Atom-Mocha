@@ -8,6 +8,8 @@
 	"main": "./index.js",
 	"atomTestRunner": "./index.js",
 	"scripts": {
+		"lint": "npx eslint .",
+		"test": "atom -t ./spec",
 		"install": "node ./bin/post-install.js"
 	},
 	"engines": {

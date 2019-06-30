@@ -1,6 +1,10 @@
 Atom-Mocha
 ==========
 
+[![Build status: TravisCI][TravisCI-badge]][TravisCI-link]
+[![Build status: AppVeyor][AppVeyor-badge]][AppVeyor-link]
+[![Latest package version][NPM-version]][Release-link]
+
 Run package specs in [Atom](https://atom.io/) using [Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/).
 
 <img src="https://raw.githubusercontent.com/Alhadis/Atom-Mocha/static/preview.png" width="657" alt="Preview" />
@@ -45,3 +49,13 @@ Reminders
 * [Nifty extras are available](docs/extensions.md) to help with writing tests.
 * Reload the spec-runner window by pressing <kbd>Ctrl/Cmd + R</kbd>.
 * Tests can be batch-toggled by <kbd>Alt</kbd>-clicking their title.
+
+
+
+[Referenced links]:____________________________________________________________________
+[AppVeyor-badge]: https://ci.appveyor.com/api/projects/status/md9ukwrfahk93vkx?svg=true
+[AppVeyor-link]:  https://ci.appveyor.com/project/Alhadis/Atom-Mocha
+[TravisCI-badge]: https://travis-ci.org/Alhadis/Atom-Mocha.svg?branch=master
+[TravisCI-link]:  https://travis-ci.org/Alhadis/Atom-Mocha
+[NPM-version]:    https://img.shields.io/npm/v/atom-mocha.svg?colorB=brightgreen
+[Release-link]:   https://github.com/Alhadis/Atom-Mocha/releases/latest
