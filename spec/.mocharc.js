@@ -6,9 +6,11 @@ if(!AtomMocha.headless && !AtomMocha.isCI)
 const errors = new Map();
 
 module.exports = {
-	reporter: "atom",
-	require: "chai/should",
 	recursive: true,
+	require: [
+		"chai/should",
+		"./subdir/some-global.js",
+	],
 	
 	beforeStart(){
 		const {fail} = Mocha.Runner.prototype;

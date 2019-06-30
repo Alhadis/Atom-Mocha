@@ -86,6 +86,10 @@ describe("Second suite at top-level", function(){
 		something();
 	});
 	
+	it("loads locally-required files", () => {
+		expect(global.someGlobalThing).to.equal("fooXYZ");
+	});
+	
 	unlessOnWindows.it("enjoys real symbolic links", () => {
 		"Any Unix-like system".should.be.ok;
 	});

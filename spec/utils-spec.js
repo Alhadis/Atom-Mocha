@@ -224,7 +224,7 @@ describe("Utility functions", () => {
 				editor.should.be.an.editor;
 				editor.getPath().should.existOnDisk;
 			}
-			paths = paths.map(p => p.replace(/\//g, "\\"))
+			paths = paths.map(p => p.replace(/\//g, "\\"));
 			editors = await open(...paths);
 			expect(editors).to.be.an("array").with.lengthOf(4);
 			for(const editor of editors){
