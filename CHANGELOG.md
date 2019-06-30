@@ -16,6 +16,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 * **Changed:** [`TextEditor`][] objects now stringify to `<TextEditor…>`
 * **Changed:** `.focus` assertion now works for [`TextEditor`][] objects
 * **Changed:** `link()` removed from [`./lib/utils`][] and made internal
+* **Fixed:** [`autoScroll`][] preventing user from scrolling manually
 * **Fixed:** Code-blocks missing if `beforeStart` was defined in config
 * **Fixed:** `document.title` property throwing error when reconfigured
 * **Fixed:** Process hanging if `beforeFinish` handler throws an error
@@ -23,6 +24,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 
 [`./lib/utils`]: ./lib/utils.js
 [`autoIt`]:      ./docs/options.md#autoit
+[`autoScroll`]:  ./docs/options.md#autoscroll
 [`specPattern`]: ./docs/options.md#specpattern
 [`TextEditor`]:  https://atom.io/docs/api/v1.38.2/TextEditor
 [`--recursive`]: https://mochajs.org/#-recursive
