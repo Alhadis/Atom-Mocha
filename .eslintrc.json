@@ -12,7 +12,8 @@
 		"rules": {
 			"brace-style": 0,
 			"indent": 0,
-			"no-unexpected-multiline": 0
+			"no-unexpected-multiline": 0,
+			"no-async-promise-executor": 0
 		}
 	},{
 		"files": ["lib/reporter.js"],
