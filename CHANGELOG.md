@@ -4,8 +4,9 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
-[Unpublished]
+[v2.2.0]
 ------------------------------------------------------------------------
+**July 1st, 2019**  
 * **Added:** [`.buffer`](docs/extensions.md#buffer) assertion
 * **Added:** [`.editor`](docs/extensions.md#editor) assertion
 * **Added:** Statbar counters filtering results when clicked
@@ -35,6 +36,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 
 [v2.1.2]
 ------------------------------------------------------------------------
+**June 1st, 2019**  
 * **Added:** Access to `atom` and `AtomMocha` globals in `.mocharc.js`
 * **Added:** `AtomMocha.isCI` property for identifying CI environments
 * **Fixed:** Async functions not reformatted in code-blocks
@@ -160,7 +162,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v2.1.2...HEAD
+[Unpublished]: ../../compare/v2.2.0...HEAD
+[v2.2.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.2.0
 [v2.1.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.1.2
 [v2.1.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.1.1
 [v2.1.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.1.0
