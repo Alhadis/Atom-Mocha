@@ -6,6 +6,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 
 [Unpublished]
 ------------------------------------------------------------------------
+* **Fixed:** Tests not shown when filtering by failed results
 * Upgraded to [Mocha v6.2.0][]
 
 [Mocha v6.2.0]: https://github.com/mochajs/mocha/releases/tag/v6.2.0
