@@ -4,6 +4,13 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* Upgraded to [Mocha v6.2.0][]
+
+[Mocha v6.2.0]: https://github.com/mochajs/mocha/releases/tag/v6.2.0
+
+
 [v2.2.0]
 ------------------------------------------------------------------------
 **July 1st, 2019**  
