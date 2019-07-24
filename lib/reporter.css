@@ -458,6 +458,8 @@ html, body{
 
 /** Minimal mode */
 #mocha.minimal{
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 	#mocha.minimal > #mocha-report{
 		position: static;

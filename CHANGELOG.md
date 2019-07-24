@@ -7,6 +7,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 [Unpublished]
 ------------------------------------------------------------------------
 * **Added:** `afterStart` callback that's executed after [`mocha.run()`]
+* **Fixed:** Inability to scroll default reporter with `minimal` enabled
 * **Fixed:** Tests not shown when filtering by failed results
 * Upgraded to [Mocha v6.2.0][]
 
