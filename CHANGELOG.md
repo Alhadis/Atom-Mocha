@@ -6,9 +6,11 @@ This project honours [Semantic Versioning](http://semver.org/).
 
 [Unpublished]
 ------------------------------------------------------------------------
+* **Added:** `afterStart` callback that's executed after [`mocha.run()`]
 * **Fixed:** Tests not shown when filtering by failed results
 * Upgraded to [Mocha v6.2.0][]
 
+[`mocha.run()`]: https://mochajs.org/api/mocha#run
 [Mocha v6.2.0]: https://github.com/mochajs/mocha/releases/tag/v6.2.0
 
 

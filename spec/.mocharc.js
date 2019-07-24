@@ -13,6 +13,7 @@ module.exports = {
 	],
 	
 	beforeStart(){
+		this.beforeStart.called = true;
 		const {fail} = Mocha.Runner.prototype;
 		Mocha.Runner.prototype.fail = function(test, error){
 			errors.set(test, error);
@@ -20,9 +21,16 @@ module.exports = {
 		};
 	},
 	
+	afterStart(){
+		this.afterStart.called = true;
+	},
+	
 	// Deduce "successfully failed" tests from the total number of failures
 	beforeFinish(failures){
 		if(AtomMocha.runner._abort) return;
+		expect(module.exports.beforeStart).to.have.property("called").that.equals(true);
+		expect(module.exports.afterStart).to.have.property("called").that.equals(true);
+		
 		const collect = (from, into) => {
 			for(const test of from.tests){
 				into.push(test);
