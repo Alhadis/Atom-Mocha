@@ -4,8 +4,9 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
-[Unpublished]
+[v2.2.1]
 ------------------------------------------------------------------------
+**July 24th, 2019**  
 * **Added:** `afterStart` callback that's executed after [`mocha.run()`]
 * **Fixed:** Inability to scroll default reporter with `minimal` enabled
 * **Fixed:** Tests not shown when filtering by failed results
@@ -173,7 +174,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v2.2.0...HEAD
+[Unpublished]: ../../compare/v2.2.1...HEAD
+[v2.2.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.2.1
 [v2.2.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.2.0
 [v2.1.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.1.2
 [v2.1.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.1.1
