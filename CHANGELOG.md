@@ -4,6 +4,13 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* **Changed:** Non-Atom related Chai extensions moved to a [new repo][2]
+
+[2]: https://github.com/Alhadis/Chinotto
+
+
 [v2.2.1]
 ------------------------------------------------------------------------
 **July 24th, 2019**  

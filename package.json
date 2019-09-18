@@ -18,6 +18,7 @@
 	"files": ["bin", "lib", "index.js"],
 	"dependencies": {
 		"chai": "^4.2.0",
+		"chinotto": "^1.0.0",
 		"diff": "^4.0.1",
 		"mocha": "^6.2.0",
 		"mocha-when": "^1.0.1",
