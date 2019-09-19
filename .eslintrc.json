@@ -8,6 +8,11 @@
 		"no-underscore-dangle": 0
 	},
 	"overrides": [{
+		"files": ["lib/extensions.js"],
+		"rules": {
+			"prefer-arrow-callback": 0
+		}
+	},{
 		"files": ["lib/main.js"],
 		"rules": {
 			"brace-style": 0,
