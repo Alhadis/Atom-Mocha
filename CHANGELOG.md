@@ -7,8 +7,10 @@ This project honours [Semantic Versioning](http://semver.org/).
 [Unpublished]
 ------------------------------------------------------------------------
 * **Changed:** Non-Atom related Chai extensions moved to a [new repo][2]
+* Upgraded to [Mocha v7.1.2][]
 
 [2]: https://github.com/Alhadis/Chinotto
+[Mocha v7.1.2]: https://github.com/mochajs/mocha/releases/tag/v7.1.2
 
 
 [v2.2.1]

@@ -20,18 +20,17 @@
 		"chai": "^4.2.0",
 		"chinotto": "^1.0.0",
 		"diff": "^4.0.2",
-		"mocha": "^7.1.1",
+		"mocha": "^7.1.2",
 		"mocha-when": "^1.0.1",
-		"print": "^1.1.0"
+		"print": "^1.2.0"
 	},
 	"devDependencies": {
-		"@alhadis/eslint-config": "^2.2.0",
+		"@alhadis/eslint-config": "^2.3.1",
 		"atom-ts-transpiler": "^1.5.2",
-		"eslint": "^6.8.0",
-		"eslint-plugin-import": "^2.20.1",
-		"react": "^16.8.6",
-		"react-dom": "^16.8.6",
-		"typescript": "^2.0.0"
+		"eslint": "^7.0.0",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"typescript": "^3.8.3"
 	},
 	"atomTranspilers": [{
 		"transpiler": "atom-ts-transpiler",
