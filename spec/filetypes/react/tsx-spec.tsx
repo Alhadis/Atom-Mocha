@@ -1,7 +1,7 @@
 import * as React from "react";
 
 declare namespace JSX {
-	interface IIntrinsicElements {
+	interface IntrinsicElements {
 		foo: { bar: string; baz?: number };
 	}
 }
