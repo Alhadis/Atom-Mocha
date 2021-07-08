@@ -1,0 +1,22 @@
+name: Atom CI
+
+on:
+    push:         {branches: [master]}
+    pull_request: {branches: [master]}
+    workflow_dispatch:
+        # Enable manual execution via Actions tab
+
+jobs:
+    build:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os: [ubuntu-latest, macos-latest]
+                channel: [stable, beta]
+        steps:
+            - uses: actions/checkout@v2
+            - name: Run package tests
+              run: curl -sL https://git.io/fji1w | sh
+              env:
+                  ATOM_CHANNEL: ${{ matrix.channel }}
+                  NODE_REDIRECT_WARNINGS: /dev/null

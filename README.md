@@ -1,7 +1,8 @@
 Atom-Mocha
 ==========
 
-[![Build status: TravisCI][TravisCI-badge]][TravisCI-link]
+[![Build status: GitHub Actions][Actions-badge]][Actions-link]
+[![Build status: Travis CI][TravisCI-badge]][TravisCI-link]
 [![Build status: AppVeyor][AppVeyor-badge]][AppVeyor-link]
 [![Latest package version][NPM-version]][Release-link]
 
@@ -53,9 +54,11 @@ Reminders
 
 
 [Referenced links]:____________________________________________________________________
-[AppVeyor-badge]: https://ci.appveyor.com/api/projects/status/md9ukwrfahk93vkx?svg=true
+[Actions-badge]:  https://img.shields.io/github/workflow/status/Alhadis/Atom-Mocha/Atom%20CI?label=GitHub%20Actions&logo=github
+[Actions-link]:   https://github.com/Alhadis/Atom-Mocha/actions
+[AppVeyor-badge]: https://img.shields.io/appveyor/build/Alhadis/Atom-Mocha?label=AppVeyor&logo=appveyor&logoColor=white
 [AppVeyor-link]:  https://ci.appveyor.com/project/Alhadis/Atom-Mocha
-[TravisCI-badge]: https://travis-ci.org/Alhadis/Atom-Mocha.svg?branch=master
-[TravisCI-link]:  https://travis-ci.org/Alhadis/Atom-Mocha
+[TravisCI-badge]: https://img.shields.io/travis/com/Alhadis/Atom-Mocha?label=Travis%20CI&logo=travis
+[TravisCI-link]:  https://travis-ci.com/Alhadis/Atom-Mocha
 [NPM-version]:    https://img.shields.io/npm/v/atom-mocha.svg?colorB=brightgreen
 [Release-link]:   https://github.com/Alhadis/Atom-Mocha/releases/latest
