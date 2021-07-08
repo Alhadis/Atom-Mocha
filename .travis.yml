@@ -4,7 +4,9 @@ branches:
 git:
     depth: 10
 
-language: cpp
+language: node_js
+
+node_js: 12
 
 matrix:
     include:
