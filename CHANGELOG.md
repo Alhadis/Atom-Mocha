@@ -4,14 +4,15 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
-[Unpublished]
+[v2.2.2]
 ------------------------------------------------------------------------
-* **Added:** Support for `FORCE_COLOR` environment variable
+**August 3rd, 2021**  
+* **Added:** Support for the `FORCE_COLOR` environment variable
 * **Changed:** Non-Atom related Chai extensions moved to a [new repo][2]
-* Upgraded to [Mocha v9.0.2][]
+* Upgraded to [Mocha v9.0.3][]
 
 [2]: https://github.com/Alhadis/Chinotto
-[Mocha v9.0.2]: https://github.com/mochajs/mocha/releases/tag/v9.0.2
+[Mocha v9.0.3]: https://github.com/mochajs/mocha/releases/tag/v9.0.3
 
 
 [v2.2.1]
@@ -184,7 +185,8 @@ Initial release.
 
 
 [Referenced links]:_____________________________________________________
-[Unpublished]: ../../compare/v2.2.1...HEAD
+[Unpublished]: ../../compare/v2.2.2...HEAD
+[v2.2.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.2.2
 [v2.2.1]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.2.1
 [v2.2.0]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.2.0
 [v2.1.2]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.1.2
