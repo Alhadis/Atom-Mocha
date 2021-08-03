@@ -6,6 +6,7 @@ This project honours [Semantic Versioning](http://semver.org/).
 
 [Unpublished]
 ------------------------------------------------------------------------
+* **Added:** Support for `FORCE_COLOR` environment variable
 * **Changed:** Non-Atom related Chai extensions moved to a [new repo][2]
 * Upgraded to [Mocha v9.0.2][]
 
