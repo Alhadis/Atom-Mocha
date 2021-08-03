@@ -1,0 +1,2 @@
+# Prevent ESLint griping about CRLF endings on Windows
+*.js text eol=lf
