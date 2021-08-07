@@ -4,6 +4,13 @@ Change Log
 This project honours [Semantic Versioning](http://semver.org/).
 
 
+[Unpublished]
+------------------------------------------------------------------------
+* **Fixed:** Errors ignored when thrown from [`beforeStart` hook][3]
+
+[3]: https://mochajs.org/#hooks
+
+
 [v2.2.2]
 ------------------------------------------------------------------------
 **August 3rd, 2021**  
