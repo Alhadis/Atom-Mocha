@@ -106,6 +106,8 @@ describe("Aborted tests", () => {
 
 describe("Screenshots", function(){
 	this.timeout(5000);
+	const junkFiles = new Set();
+	const {existsSync, unlinkSync} = require("fs");
 	const {join, resolve} = require("path");
 	const {tmpdir} = require("os");
 	let ui;
@@ -123,9 +125,17 @@ describe("Screenshots", function(){
 		let saveTo    = join(".atom-mocha", process.pid + ".jpeg.worst-quality");
 		const results = await AtomMocha.snapshot(saveTo, "jpeg", 0);
 		saveTo        = join(resolve(__dirname, ".."), saveTo);
+		Object.values(results).forEach(junk => junkFiles.add(junk));
 		results.should.eql({img: saveTo + ".jpg", dom: saveTo + ".html"});
 		expect(results.img).to.existOnDisk;
 		expect(results.dom).to.existOnDisk;
+	});
+	
+	after("Removing unwanted artefact", () => {
+		for(const junk of junkFiles){
+			existsSync(junk) && unlinkSync(junk);
+			junkFiles.delete(junk);
+		}
 	});
 	
 	it("demystifies unreproducible CI failures", () => true); // Hopefully
