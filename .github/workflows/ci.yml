@@ -31,11 +31,11 @@ jobs:
               env:
                   ATOM_CHANNEL: ${{ matrix.channel }}
 
-            - name: Upload artefacts
-              uses: actions/upload-artifact@v2
-              if:   always()
+            - name:  Upload artefacts
+              uses:  actions/upload-artifact@v2
+              if:    always()
               with:
-                  name: screenshots.${{ matrix.os }}
+                  name: screenshots.${{ matrix.os }}.${{ matrix.channel }}
                   path: .atom-mocha
                   if-no-files-found: ignore
                   retention-days: 30
