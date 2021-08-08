@@ -12,11 +12,13 @@ Options are sourced from the following locations, in descending order of priorit
 7. `mocha.opts`
 
 
+* [afterTest](#aftertest) / [beforeTest](#beforetest) / [onFail](#onfail) / [onPass](#onpass)
 * [headless](#headless) / [interactive](#interactive)
 * [mocha](#mocha)
 * [noExtensions](#noextensions)
 * [optFiles](#optfiles)
 * [specPattern](#specpattern)
+* [snapshotDir](#snapshotdir)
 * [tests](#tests)
 
 **Reporter-specific:**
@@ -35,6 +37,25 @@ Options are sourced from the following locations, in descending order of priorit
 * [slide](#slide)
 * [stackFilter](#stackfilter)
 * [title](#title)
+
+
+### <a name="aftertest">afterTest</a> / <a name="beforetest">beforeTest</a> / <a name="onfail">onFail</a> / <a name="onpass">onPass</a>
+__.mocharc.js only__  
+Lifecycle hooks that behave similarly to Mocha's [`beforeEach()`][hooks] and [`afterEach()`][hooks]
+hooks, but are guaranteed to run before any other hook. `onFail` and `onPass` are called for every
+test which fails or passes, respectively, and run before `afterTest()`.
+
+Handlers are called with two parameters: the [`Mocha.Runnable`](https://mochajs.org/api/runnable) instance
+(test object), and the exception which triggered its failure (if any).
+
+```js
+// .mocharc.js
+module.exports = {
+	onFail(test, error){
+		debugger;
+	},
+};
+```
 
 
 
@@ -105,6 +126,84 @@ Only needed if your `mocha.opts` file is located in a different directory to you
 __Note:__
 This package is currently limited to loading one `mocha.opts` at once.
 This limitation may be fixed in future to permit directory-specific configurations.
+
+
+
+### snapshotDir
+A directory in which to store screen-captures taken automatically after failed tests.
+If the path does not exist, it will be created. Moreover, setting this option enables
+the aforementioned auto-capture feature, with each individual snapshot saved to:
+
+~~~js
+`${options.snapshotDir}/${CURRENT_DATE}/${FAILURE_NUMBER}.{png,html,json}`
+~~~
+
+For example, given a `snapshotDir` of `/tmp/atom-tests`, the second failed test will
+be saved to:
+
+~~~
+/tmp/atom-tests/2021-08-08T03-06-05.811Z/2.png
+/tmp/atom-tests/2021-08-08T03-06-05.811Z/2.html
+/tmp/atom-tests/2021-08-08T03-06-05.811Z/2.json
+~~~
+
+The HTML file saved with the screen-capture image is a scrape of the DOM following the
+respective test failure (specifically, [`document.documentElement.outerHTML`](https://mdn.io/outerHTML)).
+The JSON file contains metadata identifying the failed test and the stack trace of the
+relevant error:
+
+~~~json
+{
+	"test": [
+		"Suite title",
+		"it breaks something"
+	],
+	"file": "/Users/Alhadis/Labs/Atom-Mocha/spec/basic-spec.js",
+	"error": "ReferenceError: something is not defined\n    at Context.<anonymous> (…)",
+	"snapshot": {
+		"img": "/tmp/atom-tests/2021-08-08T03-06-05.811Z/2.png",
+		"dom": "/tmp/atom-tests/2021-08-08T03-06-05.811Z/2.html"
+	}
+}
+~~~
+
+This feature exists mainly to facilitate cross-platform testing in headless environments,
+especially in CI environments. Note that snapshots will (usually) not be retained by most
+CI providers: remember to tailor your configuration appropriately.
+For example, [using AppVeyor](https://www.appveyor.com/docs/packaging-artifacts/):
+
+~~~yaml
+# .mocharc.yml
+snapshotDir: .atom-mocha
+
+# appveyor.yml
+on_finish:
+  - ps: |
+      if(Get-ChildItem '.atom-mocha/**/*.json' -ErrorAction Ignore){
+          7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on screenshots.7z .atom-mocha
+          Push-AppveyorArtifact screenshots.7z -FileName "$env:APPVEYOR_JOB_ID-screenshots.7z"
+      }
+~~~
+
+If finer control is desired, call `AtomMocha.snapshot()` directly:
+
+~~~js
+const pathBase = require("os").homedir() + "/workspace";
+const format   = "jpg";
+const quality  = 100;
+
+const {
+	img, // ~/workspace.jpg
+	dom, // ~/workspace.html
+} = await AtomMocha.snapshot(pathBase, format, quality);
+~~~
+
+
+
+### snapshotFormat
+__Default:__ `png`  
+File format used when generating screen-captures via [`snapshotDir`](#snapshotdir).
+May be one of `png`, `pdf`, or `jpg`/`jpeg`.
 
 
 
@@ -286,5 +385,6 @@ Title of the spec-runner window. Defaults to `"Mocha"`.
 
 
 [Referenced links]:_____________________________
+[hooks]: https://mochajs.org/#hooks
 [`v2.2.0`]: https://github.com/Alhadis/Atom-Mocha/releases/tag/v2.2.0
 [`mocha-when`]: https://www.npmjs.com/package/mocha-when

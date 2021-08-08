@@ -6,6 +6,8 @@ This project honours [Semantic Versioning](http://semver.org/).
 
 [Unpublished]
 ------------------------------------------------------------------------
+* **Added:** `beforeTest`, `afterTest`, `onPass` and `onFail` hooks
+* **Added:** Ability to record screen-captures of failed tests
 * **Fixed:** Errors ignored when thrown from [`beforeStart` hook][3]
 
 [3]: https://mochajs.org/#hooks

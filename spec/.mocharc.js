@@ -6,6 +6,7 @@ if(!AtomMocha.headless && !AtomMocha.isCI)
 const errors = new Map();
 
 module.exports = {
+	snapshotDir: ".atom-mocha",
 	recursive: true,
 	require: [
 		"chai/should",
@@ -23,6 +24,11 @@ module.exports = {
 	
 	afterStart(){
 		this.afterStart.called = true;
+	},
+	
+	beforeTest(test){
+		const random = [0, 0, 0].map(() => Math.round(255 * Math.random(0)));
+		atom.workspace.getElement().style.backgroundColor = `rgb(${random})`;
 	},
 	
 	// Deduce "successfully failed" tests from the total number of failures

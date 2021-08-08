@@ -102,3 +102,31 @@ describe("Aborted tests", () => {
 	it("won't reach this", () => true.should.not.be.false);
 	it.skip("won't reach this either", () => true.should.be.true);
 });
+
+
+describe("Screenshots", function(){
+	this.timeout(5000);
+	const {join, resolve} = require("path");
+	const {tmpdir} = require("os");
+	let ui;
+	
+	before("Testing JPEG snapshots (100% quality)", async () => {
+		attachToDOM(ui = atom.workspace.getElement());
+		const saveTo  = join(tmpdir(), process.pid + ".jpeg.best-quality");
+		const results = await AtomMocha.snapshot(saveTo, "jPg", 100);
+		results.should.eql({img: saveTo + ".jpg", dom: saveTo + ".html"});
+		expect(results.img).to.existOnDisk;
+		expect(results.dom).to.existOnDisk;
+	});
+	
+	before("Testing JPEG snapshots (0% quality)", async () => {
+		let saveTo    = join(".atom-mocha", process.pid + ".jpeg.worst-quality");
+		const results = await AtomMocha.snapshot(saveTo, "jpeg", 0);
+		saveTo        = join(resolve(__dirname, ".."), saveTo);
+		results.should.eql({img: saveTo + ".jpg", dom: saveTo + ".html"});
+		expect(results.img).to.existOnDisk;
+		expect(results.dom).to.existOnDisk;
+	});
+	
+	it("demystifies unreproducible CI failures", () => true); // Hopefully
+});

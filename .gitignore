@@ -27,3 +27,4 @@ node_modules
 components
 npm-debug.log
 .apl.history
+/.atom-mocha
