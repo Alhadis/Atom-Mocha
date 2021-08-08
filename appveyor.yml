@@ -20,3 +20,10 @@ install:
 
 test_script:
     - ps: (New-Object net.WebClient).DownloadString("https://git.io/JWdh6") | iex
+
+on_finish:
+    - ps: |
+        if(Get-ChildItem '.atom-mocha/**/*.json' -ErrorAction Ignore){
+            7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on screenshots.7z .atom-mocha
+            Push-AppveyorArtifact screenshots.7z -FileName "$env:APPVEYOR_JOB_ID-screenshots.7z"
+        }
