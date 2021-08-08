@@ -7,7 +7,8 @@ on:
         # Enable manual execution via Actions tab
 
 jobs:
-    build:
+    test:
+        name: Run tests
         runs-on: ${{ matrix.os }}
         strategy:
             matrix:
@@ -29,3 +30,12 @@ jobs:
               shell: powershell
               env:
                   ATOM_CHANNEL: ${{ matrix.channel }}
+
+            - name: Upload artefacts
+              uses: actions/upload-artifact@v2
+              if:   always()
+              with:
+                  name: screenshots.${{ matrix.os }}
+                  path: .atom-mocha
+                  if-no-files-found: ignore
+                  retention-days: 30

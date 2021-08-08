@@ -22,6 +22,7 @@ test_script:
     - ps: (New-Object net.WebClient).DownloadString("https://git.io/JWdh6") | iex
 
 on_finish:
+    - ps: Get-ChildItem -Path '.atom-mocha' -File -ErrorAction Ignore | Remove-Item
     - ps: |
         if(Get-ChildItem '.atom-mocha/**/*.json' -ErrorAction Ignore){
             7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on screenshots.7z .atom-mocha
