@@ -2,11 +2,10 @@
 
 const {join, resolve}          = require("path");
 const {tmpdir}                 = require("os");
-const {captureScreen}          = require("../lib/utils.js");
 const {existsSync, unlinkSync} = require("fs");
 
 describe("Screenshots", function(){
-	this.timeout(5000);
+	this.timeout(20000);
 	const junkFiles = new Set();
 	
 	before("Attaching workspace element", () => {
@@ -42,6 +41,9 @@ describe("Screenshots", function(){
 	
 	it("demystifies unreproducible CI failures", () => { // Hopefully
 		const saveTo = join(AtomMocha.options.snapshotDir, "screen.png");
-		captureScreen(saveTo);
+		existsSync(saveTo) && unlinkSync(saveTo);
+		expect(saveTo).not.to.existOnDisk;
+		AtomMocha.utils.captureScreen(saveTo);
+		expect(saveTo).to.existOnDisk;
 	});
 });
