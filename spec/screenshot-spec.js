@@ -42,6 +42,6 @@ describe("Screenshots", function(){
 	
 	it("demystifies unreproducible CI failures", () => { // Hopefully
 		const saveTo = join(AtomMocha.options.snapshotDir, "screen.png");
-		return captureScreen(saveTo);
+		captureScreen(saveTo);
 	});
 });
