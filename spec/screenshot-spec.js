@@ -39,7 +39,7 @@ describe("Screenshots", function(){
 		}
 	});
 	
-	it("demystifies unreproducible CI failures", () => { // Hopefully
+	("linux" === process.platform ? it.skip : it)("takes screen-captures of the desktop", () => {
 		const saveTo = join(AtomMocha.options.snapshotDir, "screen.png");
 		existsSync(saveTo) && unlinkSync(saveTo);
 		expect(saveTo).not.to.existOnDisk;
